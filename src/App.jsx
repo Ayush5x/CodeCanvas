@@ -65,7 +65,7 @@ import SortingAlgorithmsQuestions from "./features/Activity/Quiz/SortingAlgorith
 import SearchAlgorithmsQuestions from "./features/Activity/Quiz/SearchQuestions";
 import RecursionQuestions from "./features/Activity/Quiz/RecursionQuestions";
 import GreedyAlgorithmsQuestions from "./features/Activity/Quiz/GreedyQuestions";
-import DS2Questions from "./features/Activity/Quiz/DS2Questions";
+import DS2Questions from "./features/Activity/Quiz/Ds2Questions";
 
 export default function App() {
   const location = useLocation();
