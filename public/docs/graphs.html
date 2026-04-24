@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Graphs - CodeCanvas</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  <!-- Top Navbar -->
+  
+
+  <button id="mobile-toggle" class="mobile-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>DSA Tutorial</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-category">DSA Tutorial</div>
+      <ul>
+        <li><a href="index.html">DSA HOME</a></li>
+        <li><a href="dsa-intro.html">DSA Intro</a></li>
+        <li><a href="simple-algorithm.html">DSA Simple Algorithm</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Arrays</div>
+      <ul>
+        <li><a href="arrays.html">DSA Arrays</a></li>
+        <li><a href="array-operations.html">Array Operations</a></li>
+        <li><a href="multi-dimensional-arrays.html">Multi-dimensional Arrays</a></li>
+      </ul>
+
+      <div class="sidebar-category">Sorting Algorithms</div>
+      <ul>
+        <li><a href="bubble-sort.html">DSA Bubble Sort</a></li>
+        <li><a href="selection-sort.html">DSA Selection Sort</a></li>
+        <li><a href="insertion-sort.html">DSA Insertion Sort</a></li>
+        <li><a href="quick-sort.html">DSA Quick Sort</a></li>
+        <li><a href="counting-sort.html">DSA Counting Sort</a></li>
+        <li><a href="radix-sort.html">DSA Radix Sort</a></li>
+        <li><a href="merge-sort.html">DSA Merge Sort</a></li>
+      </ul>
+
+      <div class="sidebar-category">Searching Algorithms</div>
+      <ul>
+        <li><a href="linear-search.html">DSA Linear Search</a></li>
+        <li><a href="binary-search.html">DSA Binary Search</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Linked Lists</div>
+      <ul>
+        <li><a href="linked-lists.html">DSA Linked Lists</a></li>
+        <li><a href="linked-lists-memory.html">DSA Linked Lists in Memory</a></li>
+        <li><a href="linked-lists-types.html">DSA Linked Lists Types</a></li>
+        <li><a href="linked-lists-operations.html">Linked Lists Operations</a></li>
+      </ul>
+
+      <div class="sidebar-category">Stacks & Queues</div>
+      <ul>
+        <li><a href="stacks.html">DSA Stacks</a></li>
+        <li><a href="queues.html">DSA Queues</a></li>
+      </ul>
+
+      <div class="sidebar-category">Hash Tables</div>
+      <ul>
+        <li><a href="hash-tables.html">DSA Hash Tables</a></li>
+        <li><a href="hash-maps.html">DSA Hash Maps</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Trees</div>
+      <ul>
+        <li><a href="trees.html">DSA Trees</a></li>
+        <li><a href="binary-trees.html">DSA Binary Trees</a></li>
+        <li><a href="tree-pre-order.html">DSA Pre-order Traversal</a></li>
+        <li><a href="tree-in-order.html">DSA In-order Traversal</a></li>
+        <li><a href="tree-post-order.html">DSA Post-order Traversal</a></li>
+        <li><a href="tree-array-implementation.html">DSA Array Implementation</a></li>
+        <li><a href="binary-search-trees.html">DSA Binary Search Trees</a></li>
+        <li><a href="avl-trees.html">DSA AVL Trees</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Graphs</div>
+      <ul>
+        <li><a href="graphs.html">DSA Graphs</a></li>
+        <li><a href="graphs-implementation.html">Graphs Implementation</a></li>
+        <li><a href="graphs-traversal.html">DSA Graphs Traversal</a></li>
+        <li><a href="graphs-cycle-detection.html">DSA Cycle Detection</a></li>
+      </ul>
+
+      <div class="sidebar-category">Shortest Path</div>
+      <ul>
+        <li><a href="shortest-path.html">DSA Shortest Path</a></li>
+        <li><a href="dijkstras.html">DSA Dijkstra's</a></li>
+        <li><a href="bellman-ford.html">DSA Bellman-Ford</a></li>
+      </ul>
+
+      <div class="sidebar-category">Minimum Spanning Tree</div>
+      <ul>
+        <li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a></li>
+        <li><a href="prims.html">DSA Prim's</a></li>
+        <li><a href="kruskals.html">DSA Kruskal's</a></li>
+      </ul>
+
+      <div class="sidebar-category">Maximum Flow</div>
+      <ul>
+        <li><a href="maximum-flow.html">DSA Maximum Flow</a></li>
+        <li><a href="ford-fulkerson.html">DSA Ford-Fulkerson</a></li>
+        <li><a href="edmonds-karp.html">DSA Edmonds-Karp</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="back-link">← Back to CodeCanvas</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="avl-trees.html" class="btn">&lt; Prev</a>
+      <a href="binary-search-trees.html" class="btn ">30</a>
+      <a href="avl-trees.html" class="btn ">31</a>
+      <a href="graphs.html" class="btn active">32</a>
+      <a href="graphs-implementation.html" class="btn ">33</a>
+      <a href="graphs-traversal.html" class="btn ">34</a>
+      <a href="graphs-implementation.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Graphs</h1>
+
+    <div class="highlight-box">
+      <p>A Graph is a non-linear data structure consisting of vertices (nodes) and edges that connect these vertices. It is used to represent relationships between objects.</p>
+    </div>
+
+    <h2>Graph Structure</h2>
+    <p>A vertex, also called a node, is a point or an object in the Graph, and an edge is used to connect two vertices with each other.</p>
+    <p>Graphs are non-linear because the data structure allows us to have different paths to get from one vertex to another, unlike linear data structures like Arrays or Linked Lists.</p>
+    <p>They are widely used to model networks such as roads, social media connections, and the internet.</p>
+
+    <div class="diagram">
+      <svg width="400" height="250" viewBox="0 0 400 250" class="node edge">
+        <!-- Edges -->
+        <line x1="100" y1="120" x2="200" y2="60" /> <!-- D to C -->
+        <line x1="200" y1="60" x2="300" y2="80" /> <!-- C to B -->
+        <line x1="300" y1="80" x2="350" y2="150" /> <!-- B to F -->
+        <line x1="200" y1="60" x2="350" y2="150" /> <!-- C to F -->
+        <line x1="100" y1="120" x2="150" y2="200" /> <!-- D to E -->
+        <line x1="200" y1="60" x2="150" y2="200" /> <!-- C to E -->
+        <line x1="200" y1="60" x2="250" y2="220" /> <!-- C to G -->
+        
+        <!-- Nodes -->
+        <circle cx="200" cy="60" r="20" />
+        <text x="200" y="60">C</text>
+        
+        <circle cx="100" cy="120" r="20" />
+        <text x="100" y="120">D</text>
+        
+        <circle cx="300" cy="80" r="20" />
+        <text x="300" y="80">B</text>
+        
+        <circle cx="350" cy="150" r="20" />
+        <text x="350" y="150">F</text>
+        
+        <circle cx="150" cy="200" r="20" />
+        <text x="150" y="200">E</text>
+
+        <circle cx="250" cy="220" r="20" />
+        <text x="250" y="220">G</text>
+      </svg>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Figure: An undirected graph with 6 vertices.</p>
+    </div>
+
+    <h2>Graph Representations</h2>
+    <ul>
+      <li><strong>Adjacency Matrix:</strong> A 2D array of size V x V where V is the number of vertices. If there is an edge from vertex i to vertex j, then <code>matrix[i][j] = 1</code>.</li>
+      <li><strong>Adjacency List:</strong> An array (or dictionary) of lists. Each key is a vertex, and the list contains all vertices it connects to. This is generally more space-efficient for sparse graphs.</li>
+    </ul>
+
+    <h2>Code Example</h2>
+    <p>Implementation of an Undirected Graph using an Adjacency List in JavaScript:</p>
+<pre><code>class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+  
+  addVertex(vertex) {
+    if (!this.adjacencyList[vertex]) {
+      this.adjacencyList[vertex] = [];
+    }
+  }
+  
+  addEdge(v1, v2) {
+    // Add v2 to v1's list
+    this.adjacencyList[v1].push(v2);
+    // Add v1 to v2's list (because it's undirected)
+    this.adjacencyList[v2].push(v1);
+  }
+  
+  removeEdge(v1, v2) {
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter(
+      v => v !== v2
+    );
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter(
+      v => v !== v1
+    );
+  }
+}
+
+// Usage:
+const g = new Graph();
+g.addVertex("Dallas");
+g.addVertex("Tokyo");
+g.addEdge("Dallas", "Tokyo");
+</code></pre>
+
+    <div class="pagination-top">
+      <a href="avl-trees.html" class="btn">&lt; Prev</a>
+      <a href="binary-search-trees.html" class="btn ">30</a>
+      <a href="avl-trees.html" class="btn ">31</a>
+      <a href="graphs.html" class="btn active">32</a>
+      <a href="graphs-implementation.html" class="btn ">33</a>
+      <a href="graphs-traversal.html" class="btn ">34</a>
+      <a href="graphs-implementation.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

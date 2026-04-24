@@ -1,0 +1,146 @@
+/**
+ * Common styles for reusable components across all visualizers
+ * 
+ * This file contains shared styling patterns that maintain consistency
+ * across the DSA Website. Import this in your component-specific CSS files.
+ * 
+ * Color variables are defined here based on the COLORS constant from constants/index.js
+ * Animation patterns and common UI elements are standardized here.
+ */
+
+/* CSS Custom Properties - Theme Colors */
+:root {
+  --primary-color: #58a6ff;        /* Blue - primary actions */
+  --secondary-color: #238636;      /* Green - success states */
+  --danger-color: #f85149;         /* Red - errors */
+  --warning-color: #d29922;        /* Yellow - warnings */
+  --node-active: #5bc9b1;          /* Teal - active nodes */
+  --node-inactive: #30363d;        /* Gray - inactive nodes */
+  --background: #0d1117;           /* Dark background */
+  --surface: #161b22;              /* Panel backgrounds */
+  --border: #30363d;               /* Borders */
+  --text-primary: #c9d1d9;         /* Primary text */
+  --text-secondary: #8b949e;       /* Secondary text */
+}
+
+/* Code Highlighter Styles - Used in all visualizers with syntax highlighting */
+.code-container {
+  position: relative;
+  background-color: var(--surface);
+  border-radius: 6px;
+  overflow: auto;
+  max-height: 600px;
+  border: 1px solid var(--border);
+}
+
+/* Line highlighting for animated code steps */
+.highlighted-line {
+  background-color: rgba(91, 201, 177, 0.1);
+  display: block;
+  margin: 0 -16px;
+  padding: 0 16px;
+  border-left: 2px solid var(--primary-color);
+}
+
+/* Monaco Editor line highlighting styles (if used) */
+.monaco-editor .highlighted-line {
+  background-color: rgba(88, 166, 255, 0.15) !important;
+}
+
+.monaco-editor .highlighted-line-glyph {
+  position: relative;
+}
+
+.monaco-editor .highlighted-line-glyph::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--primary-color);
+}
+
+/* Control section - Standard layout for visualizer controls */
+.control-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(22, 27, 34, 0.5);
+  border-radius: 6px;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.control-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #30363d;
+  margin: 0 0.5rem;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.dropdown-button:hover {
+  background-color: #30363d;
+  border-color: #8b949e;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 180px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #30363d;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: #30363d;
+}

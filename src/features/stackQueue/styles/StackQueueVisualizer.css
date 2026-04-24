@@ -1,0 +1,770 @@
+/* Stack & Queue Visualizer - Clean Professional Design */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700;900&display=swap');
+
+.app-container {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Background effects */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px, 70px 70px;
+  animation: twinkling 100s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes twinkling {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-100px, -100px, 0); }
+}
+
+/* Header styles */
+.app-header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(13, 17, 23, 0.8);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 10;
+  min-height: 80px;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 168, 255, 0.4), rgba(88, 166, 255, 0.4));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  z-index: 10;
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, rgba(168, 168, 255, 0.5), rgba(88, 166, 255, 0.5));
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(168, 168, 255, 0.3);
+}
+
+.home-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(168, 168, 255, 0.2);
+}
+
+.home-button svg {
+  transition: transform 0.3s ease;
+}
+
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  background: linear-gradient(90deg, #a8a8ff, #58a6ff, #86f7ff, #1331ba, #04209c);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waveGradient 5s ease infinite;
+  will-change: background-position;
+}
+
+@keyframes waveGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Main layout structure */
+.split-view {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 140px);
+  overflow: hidden;
+}
+
+.panel {
+  flex: 1;
+  background: rgba(22, 27, 34, 0.8);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.panel:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.panel h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: #8cd1f3;
+}
+
+/* Custom scrollbar */
+.panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel::-webkit-scrollbar-track {
+  background: rgba(22, 27, 34, 0.5);
+  border-radius: 4px;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background: rgba(168, 168, 255, 0.5);
+  border-radius: 4px;
+}
+
+.panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 168, 255, 0.7);
+}
+
+/* Explanation and DIY sections */
+.explanation-section, .diy-section {
+  margin-bottom: 1.5rem;
+}
+
+.explanation-content h4, .diy-content h4 {
+  color: #58a6ff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.explanation-content ul, .diy-content ul,
+.explanation-content ol, .diy-content ol {
+  padding-left: 1.5rem;
+}
+
+.explanation-content li, .diy-content li {
+  margin-bottom: 0.25rem;
+}
+
+.diy-content pre {
+  background: #161b22;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e6edf3;
+  border: 1px solid rgba(168, 168, 255, 0.3);
+  margin: 1rem 0;
+}
+
+.diy-content .copy-button {
+  background: #238636;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.diy-content .copy-button:hover {
+  background: #2ea043;
+}
+
+.diy-content .copy-button.copied {
+  background: #1f6feb;
+}
+
+.diy-content code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background: rgba(110, 118, 129, 0.4);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+.diy-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Code viewer */
+.stack-queue-container .code-viewer, .code-viewer {
+  flex: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls Section - Better organized */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+  background: rgba(13, 17, 23, 0.6);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-select,
+.control-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  background: rgba(22, 27, 34, 0.9);
+  color: #c9d1d9;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.control-input::placeholder {
+  color: rgba(201, 209, 217, 0.6);
+}
+
+.control-select:focus,
+.control-input:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+  background: rgba(22, 27, 34, 1);
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #58a6ff 0%, #1f6feb 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+
+.control-button:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(88, 166, 255, 0.4);
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animation Speed Control */
+.speed-control,
+.slider-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(22, 27, 34, 0.6);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.speed-control label,
+.slider-group label {
+  font-weight: 600;
+  color: #e6edf3;
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.speed-slider {
+  width: 150px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #a8a8ff; /* Purple theme color - Exact match to LinkedList */
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(168, 168, 255, 0.4); /* Shadow with theme color */
+  transition: all 0.2s ease;
+}
+
+.speed-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(168, 168, 255, 0.6);
+}
+
+.speed-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #a8a8ff; /* Purple theme color - Exact match to LinkedList */
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(168, 168, 255, 0.4); /* Shadow with theme color */
+}
+
+.speed-value,
+.slider-group span {
+  font-weight: 600;
+  color: #58a6ff;
+  min-width: 80px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Error and Success Messages */
+.error-message {
+  background: linear-gradient(135deg, rgba(248, 81, 73, 0.15) 0%, rgba(218, 54, 51, 0.1) 100%);
+  border: 2px solid rgba(248, 81, 73, 0.3);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  font-weight: 500;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Visualization Area */
+.structure-visualization {
+  background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(13, 17, 23, 0.95) 100%);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  border: 3px solid rgba(88, 166, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: auto;
+  min-height: 450px;
+  max-height: 700px;
+  backdrop-filter: blur(15px);
+  margin-top: 1.5rem;
+}
+
+.structure-visualization::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(88, 166, 255, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(168, 168, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.structure-info {
+  color: #c9d1d9;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(88, 166, 255, 0.08);
+  border-radius: 0.75rem;
+  border: 2px solid rgba(88, 166, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for stack/queue elements - MUCH BETTER BORDERS */
+.structure-container {
+  flex: 1;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  min-height: 280px;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 4px dashed rgba(88, 166, 255, 0.4);
+  transition: all 0.3s ease;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.structure-container:hover {
+  border-color: rgba(88, 166, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.01);
+}
+
+/* Stack Layout */
+.structure-container.stack {
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 320px;
+  margin: 0 auto;
+  /* Dynamic height based on content */
+  min-height: 280px;
+  height: auto;
+  padding: 2rem;
+}
+
+/* Stack with many elements - more compact display */
+.structure-container.stack.has-many-elements {
+  max-height: 500px;
+  padding: 1.5rem;
+}
+
+.structure-container.stack.has-many-elements .element {
+  margin-bottom: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  min-width: 60px;
+}
+
+/* Additional size adjustments for very full stacks */
+.structure-container.stack.has-many-elements .element {
+  /* Reduce vertical spacing and size when stack is getting full */
+  margin-bottom: 0.4rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  min-width: 50px;
+}
+
+.structure-container.stack.has-overflow .element {
+  /* Even more compact for overflowing stacks */
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  min-width: 45px;
+}
+
+/* Add visual indicator for scrollable stack */
+.structure-container.stack.has-overflow::after {
+  content: '⇅ Scroll to see all elements';
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(88, 166, 255, 0.8);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Queue Layout */
+.structure-container.queue {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 2rem;
+}
+
+/* Modern Element Styling - MUCH BETTER */
+.element {
+  background: linear-gradient(135deg, #58a6ff 0%, #1f6feb 100%);
+  color: white;
+  padding: 1.2rem 1.8rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  min-width: 80px;
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.element:hover {
+  box-shadow: 0 12px 30px rgba(88, 166, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stack element spacing */
+.structure-container.stack .element {
+  margin-bottom: 0.8rem;
+  width: 100%;
+  max-width: 160px;
+  /* Smaller padding for more elements */
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+.structure-container.stack .element:first-child {
+  margin-bottom: 0;
+}
+
+/* Queue arrows with better positioning */
+.structure-container.queue .element:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  left: calc(100% + 0.7rem);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #58a6ff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Enhanced placeholder - BETTER SPACING */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #7d8590;
+  font-size: 1.2rem;
+  line-height: 2;
+  padding: 2rem;
+}
+
+.placeholder p {
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #63bfec;
+}
+
+.placeholder small {
+  opacity: 0.8;
+  font-size: 1rem;
+  color: #7d8590;
+}
+
+/* Animation status */
+.animation-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #a8a8ff;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(22, 27, 34, 0.8);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(168, 168, 255, 0.3);
+}
+
+.animation-status .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(168, 168, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #a8a8ff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Stack/Queue Specific Operation Display - Subtle Styling */
+.operation-display {
+  background: rgba(22, 27, 34, 0.9);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 2px solid rgba(88, 166, 255, 0.15); /* More subtle blue-tinted border */
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5;
+  display: block;
+}
+
+.operation-title {
+  margin: 0 0 1rem 0;
+  color: #58a6ff; /* Subtle blue color instead of bright purple */
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: block;
+}
+
+.operation-content {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.08) 0%, rgba(22, 27, 34, 0.15) 100%); /* Subtle blue gradient */
+  border-radius: 0.75rem;
+  border-left: 3px solid rgba(88, 166, 255, 0.5); /* Subtle blue accent */
+  color: #e6edf3;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.operation-content.active-operation {
+  background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(22, 27, 34, 0.2) 100%);
+  border-left-color: rgba(88, 166, 255, 0.8);
+  animation: pulse-border-blue 2s infinite;
+  transform: translateX(2px);
+}
+
+@keyframes pulse-border-blue {
+  0%, 100% { 
+    border-left-color: rgba(88, 166, 255, 0.5);
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.08) 0%, rgba(22, 27, 34, 0.15) 100%);
+  }
+  50% { 
+    border-left-color: rgba(88, 166, 255, 0.8);
+    background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(22, 27, 34, 0.2) 100%);
+  }
+}
+
+/* Direct target for operation display in the right panel */
+.panel.panel-right .operation-display {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;  
+  margin-bottom: 1rem !important;
+  margin-top: 0 !important;
+}
+
+/* Absolute positioning to break free from panel's flex layout */
+.panel.panel-right .operation-content {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+}
+
+/* Ensure operation display doesn't get affected by panel styling */
+.panel > .operation-display {
+  margin: 1.5rem 0 !important;
+  width: auto !important;
+}
+
+/* Prevent panel gap from affecting inner elements */
+.panel .operation-display * {
+  flex: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .split-view {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .panel {
+    padding: 1.5rem;
+  }
+  
+  .app-header {
+    padding: 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .control-group {
+    flex-direction: column;
+  }
+  
+  .structure-container {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+  
+  .structure-visualization {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+}

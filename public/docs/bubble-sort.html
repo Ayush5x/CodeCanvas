@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Bubble Sort - CodeCanvas</title>
+  <meta name="description" content="Learn the Bubble Sort algorithm, how it works with step-by-step examples, and its complexity analysis.">
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  
+  <!-- Navbar injected by script.js -->
+  <!-- Sidebar injected by script.js -->
+
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="multi-dimensional-arrays.html" class="btn">&lt; Prev</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="multi-dimensional-arrays.html" class="btn ">6</a>
+      <a href="bubble-sort.html" class="btn active">7</a>
+      <a href="selection-sort.html" class="btn ">8</a>
+      <a href="insertion-sort.html" class="btn ">9</a>
+      <a href="selection-sort.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Bubble Sort</h1>
+
+    <div class="highlight-box">
+      <p><strong>Bubble Sort</strong> is one of the simplest sorting algorithms. It works by repeatedly stepping through the list, comparing adjacent elements and swapping them if they are in the wrong order. The largest elements "bubble up" to the end of the array with each pass.</p>
+    </div>
+
+    <h2>How Bubble Sort Works</h2>
+    <p>Imagine you have an array <code>[5, 1, 4, 2, 8]</code> and you want to sort it in ascending order.</p>
+    <p><strong>First Pass:</strong></p>
+    <ul>
+      <li>( <strong>5 1</strong> 4 2 8 ) → ( <strong>1 5</strong> 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.</li>
+      <li>( 1 <strong>5 4</strong> 2 8 ) → ( 1 <strong>4 5</strong> 2 8 ), Swap since 5 > 4</li>
+      <li>( 1 4 <strong>5 2</strong> 8 ) → ( 1 4 <strong>2 5</strong> 8 ), Swap since 5 > 2</li>
+      <li>( 1 4 2 <strong>5 8</strong> ) → ( 1 4 2 <strong>5 8</strong> ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.</li>
+    </ul>
+    <p>At the end of the first pass, the largest element (8) is at its correct position.</p>
+
+    <h2>Implementation</h2>
+<pre><code>// Bubble Sort Implementation in JavaScript
+function bubbleSort(arr) {
+    let n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // swap arr[j] and arr[j+1]
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+const data = [5, 1, 4, 2, 8];
+console.log("Sorted Array:", bubbleSort(data));
+</code></pre>
+
+    <h2>Complexity Analysis</h2>
+    <ul>
+      <li><strong>Worst and Average Case Time Complexity:</strong> O(n²). Happens when array is reverse sorted.</li>
+      <li><strong>Best Case Time Complexity:</strong> O(n). Happens when array is already sorted.</li>
+      <li><strong>Auxiliary Space:</strong> O(1). As it only uses a few extra variables for swapping.</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="multi-dimensional-arrays.html" class="btn">&lt; Prev</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="multi-dimensional-arrays.html" class="btn ">6</a>
+      <a href="bubble-sort.html" class="btn active">7</a>
+      <a href="selection-sort.html" class="btn ">8</a>
+      <a href="insertion-sort.html" class="btn ">9</a>
+      <a href="selection-sort.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

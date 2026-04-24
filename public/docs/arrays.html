@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Arrays - CodeCanvas</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  <!-- Navbar injected by script.js -->
+  <!-- Sidebar injected by script.js -->
+
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="simple-algorithm.html" class="btn">&lt; Prev</a>
+      <a href="dsa-intro.html" class="btn ">2</a>
+      <a href="simple-algorithm.html" class="btn ">3</a>
+      <a href="arrays.html" class="btn active">4</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="multi-dimensional-arrays.html" class="btn ">6</a>
+      <a href="array-operations.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Arrays</h1>
+
+    <div class="highlight-box">
+      <p>An array is a data structure used to store multiple elements of the same data type in a contiguous block of memory.</p>
+    </div>
+
+    <h2>What is an Array?</h2>
+    <p>An array is a linear data structure that collects elements and stores them in contiguous and adjacent memory locations. Arrays work on an index system starting from <code>0</code> to <code>(n-1)</code>, where <code>n</code> is the size of the array.</p>
+    <p>This contiguous memory layout is what makes arrays so fast at reading data. If you know the memory address of the first element (the base address), you can instantly calculate the exact memory address of any other element just by knowing its index.</p>
+
+    <div class="diagram">
+      <svg width="400" height="100" viewBox="0 0 400 100">
+        <!-- Base blocks -->
+        <rect x="10" y="30" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="40" y="55" fill="#f0f0f0" text-anchor="middle" font-size="16">7</text>
+        <text x="40" y="20" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">0</text>
+        
+        <rect x="70" y="30" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="100" y="55" fill="#f0f0f0" text-anchor="middle" font-size="16">11</text>
+        <text x="100" y="20" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">1</text>
+        
+        <rect x="130" y="30" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="160" y="55" fill="#f0f0f0" text-anchor="middle" font-size="16">3</text>
+        <text x="160" y="20" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">2</text>
+        
+        <rect x="190" y="30" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="220" y="55" fill="#f0f0f0" text-anchor="middle" font-size="16">2</text>
+        <text x="220" y="20" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">3</text>
+        
+        <rect x="250" y="30" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="280" y="55" fill="#f0f0f0" text-anchor="middle" font-size="16">9</text>
+        <text x="280" y="20" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">4</text>
+      </svg>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Figure: An array of 5 integers. Indices are marked in green above the boxes.</p>
+    </div>
+
+    <h2>Array Operations</h2>
+    <ul>
+      <li><strong>Traversal:</strong> Print all the array elements one by one.</li>
+      <li><strong>Insertion:</strong> Adds an element at the given index. (Can be slow if inserting at the beginning due to shifting).</li>
+      <li><strong>Deletion:</strong> Deletes an element at the given index. (Can also require shifting).</li>
+      <li><strong>Search:</strong> Searches an element using the given index or by the value.</li>
+    </ul>
+
+    <h2>Code Example</h2>
+    <p>Here is an example of creating and traversing an array in JavaScript:</p>
+<pre><code>// 1. Creating an array
+let myNumbers = [7, 11, 3, 2, 9];
+
+// 2. Accessing elements by index
+console.log(myNumbers[0]); // Outputs: 7
+console.log(myNumbers[3]); // Outputs: 2
+
+// 3. Traversing the array
+for (let i = 0; i < myNumbers.length; i++) {
+  console.log("Element at index " + i + " is " + myNumbers[i]);
+}
+
+// 4. Modifying an element
+myNumbers[2] = 42; // The array is now [7, 11, 42, 2, 9]
+</code></pre>
+
+    <div class="pagination-top">
+      <a href="simple-algorithm.html" class="btn">&lt; Prev</a>
+      <a href="dsa-intro.html" class="btn ">2</a>
+      <a href="simple-algorithm.html" class="btn ">3</a>
+      <a href="arrays.html" class="btn active">4</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="multi-dimensional-arrays.html" class="btn ">6</a>
+      <a href="array-operations.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

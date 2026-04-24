@@ -1,0 +1,107 @@
+/* HashTableVisualizer.css */
+.premium-visualizer {
+  background: #050505;
+  color: #fff;
+  height: 100vh;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.os-header {
+  height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.brand { font-weight: 800; letter-spacing: 1px; color: #fff; display: flex; align-items: center; gap: 10px; }
+.version { font-size: 0.6rem; color: #666; border: 1px solid #333; padding: 2px 6px; border-radius: 4px; }
+
+.os-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title { font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+
+/* Memory Grid - High Contrast */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.memory-slot {
+  height: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.slot-header { font-size: 0.6rem; color: #555; font-family: 'JetBrains Mono'; }
+.slot-data { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 700; color: #00d2ff; }
+
+/* Inputs */
+input, select {
+  background: #000;
+  border: 1px solid #222;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  font-family: 'JetBrains Mono';
+}
+
+.action-btn {
+  padding: 12px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #666;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.action-btn:hover { border-color: #fff; color: #fff; }
+
+/* Terminal Styling */
+.terminal-screen {
+  background: #000;
+  border-radius: 12px;
+  padding: 15px;
+  flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.text-blue { color: #00d2ff; }
+.text-dim { color: #444; }
+
+.progress-bg { height: 4px; background: #222; border-radius: 2px; margin-top: 8px; }
+.progress-fill { height: 100%; background: #00d2ff; transition: width 0.3s; }

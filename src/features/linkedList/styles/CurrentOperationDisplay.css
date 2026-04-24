@@ -1,0 +1,78 @@
+/* CurrentOperationDisplay.css - Shared style for both Stack/Queue and LinkedList visualizers */
+
+.current-operation-display {
+  background: rgba(22, 27, 34, 0.9);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 2px solid rgba(168, 168, 255, 0.2);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5;
+}
+
+.current-operation-display h4 {
+  margin: 0 0 1rem 0;
+  color: #a8a8ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.operation-description {
+  padding: 1rem 1.5rem;
+  background: rgba(168, 168, 255, 0.08);
+  border-radius: 0.75rem;
+  border-left: 4px solid rgba(168, 168, 255, 0.5);
+  color: #e6edf3;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  position: relative;
+  min-height: 3.5rem;
+}
+
+.operation-description.active-operation {
+  background: rgba(168, 168, 255, 0.15);
+  border-left-color: #a8a8ff;
+  animation: pulse-border 2s infinite;
+  transform: translateX(2px);
+}
+
+@keyframes pulse-border {
+  0%, 100% { 
+    border-left-color: #a8a8ff;
+    box-shadow: 0 2px 8px rgba(168, 168, 255, 0.1);
+  }
+  50% { 
+    border-left-color: #58a6ff;
+    box-shadow: 0 2px 12px rgba(88, 166, 255, 0.3);
+  }
+}
+
+.operation-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(168, 168, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #a8a8ff;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.no-operation {
+  color: #7d8590;
+  font-style: italic;
+}

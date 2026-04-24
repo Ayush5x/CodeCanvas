@@ -1,0 +1,120 @@
+/* Documentation Specific Styles */
+
+.docs-container {
+  --bg-color: #000000;
+  --surface-color: #0a1410;
+  --surface-light: #12211a;
+  --border-color: #265c4b;
+  --text-main: #f0f0f0;
+  --text-muted: #a0a0a0;
+  --accent-green: #468b75; 
+  --accent-green-light: #a3e4d7; 
+  --accent-green-bg: rgba(70, 139, 117, 0.15); 
+  --nav-width: 280px;
+  
+  --palette-black: #000000;
+  --palette-dark-green: #1a3c34;
+  --palette-forest-green: #2d6a4f;
+  --palette-emerald: #40916c;
+  --palette-mint: #a8e6cf;
+}
+
+.docs-container .sidebar {
+  width: var(--nav-width);
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+  background-color: var(--bg-color);
+  border-right: 1px solid var(--border-color);
+  border-radius: 0 40px 40px 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.docs-container .sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.docs-container .sidebar-header {
+  padding: 1.5rem 1.2rem;
+  margin: 1rem;
+  background: linear-gradient(135deg, var(--surface-color), #000);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+}
+
+.docs-container .main-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  background: linear-gradient(to right, var(--palette-mint), var(--palette-emerald));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.docs-container .main-content h2 {
+  font-size: 2.2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.docs-container .highlight-box {
+  background: linear-gradient(135deg, var(--palette-dark-green), #0a1410);
+  border: 1px solid var(--palette-forest-green);
+  border-left: 6px solid var(--palette-mint);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.docs-container .highlight-box p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 500;
+}
+
+.docs-container .diagram {
+  background-color: var(--surface-light);
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.docs-container pre {
+  background: var(--surface-light);
+  padding: 1.5rem;
+  border-radius: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+.docs-container code {
+  font-family: 'Consolas', monospace;
+  color: var(--accent-green-light);
+}
+
+.docs-container .pagination-top {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.docs-container .pagination-top .btn {
+  padding: 0.5rem 1rem;
+  background: var(--surface-light);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.docs-container .pagination-top .btn.active {
+  background: var(--accent-green);
+  color: black;
+}

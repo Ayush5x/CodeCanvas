@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Simple Algorithm - CodeCanvas</title>
+  <meta name="description" content="Learn what algorithms are, how they work, and how to measure their efficiency using Big O notation.">
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  
+  <!-- Navbar injected by script.js -->
+  <!-- Sidebar injected by script.js -->
+
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="dsa-intro.html" class="btn">&lt; Prev</a>
+      <a href="index.html" class="btn ">1</a>
+      <a href="dsa-intro.html" class="btn ">2</a>
+      <a href="simple-algorithm.html" class="btn active">3</a>
+      <a href="arrays.html" class="btn ">4</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="arrays.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Simple Algorithm</h1>
+
+    <div class="highlight-box">
+      <p>An <strong>algorithm</strong> is a step-by-step procedure or formula for solving a problem. Every program you write is essentially an algorithm. Understanding simple algorithms is the foundation of computer science and helps you think logically about problems.</p>
+    </div>
+
+    <h2>What Makes a Good Algorithm?</h2>
+    <p>A well-designed algorithm should satisfy the following properties:</p>
+    <ul>
+      <li><strong>Correctness:</strong> The algorithm must produce the correct output for every valid input.</li>
+      <li><strong>Efficiency:</strong> It should use minimal time and memory to solve the problem.</li>
+      <li><strong>Clarity:</strong> The steps should be unambiguous and easy to understand.</li>
+      <li><strong>Finiteness:</strong> It must terminate after a finite number of steps.</li>
+      <li><strong>Generality:</strong> It should work for a range of inputs, not just one specific case.</li>
+    </ul>
+
+    <h2>Your First Algorithm: Finding the Largest Number</h2>
+    <p>Let's write a simple algorithm to find the largest number in a list. This is an excellent first example because it teaches us about iterating, comparing, and tracking state.</p>
+
+    <p><strong>Algorithm (Plain English):</strong></p>
+    <ol>
+      <li>Start by assuming the first number in the list is the largest.</li>
+      <li>Go through each remaining number in the list.</li>
+      <li>If the current number is greater than your assumed largest, update your assumption.</li>
+      <li>After checking all numbers, the assumed largest is the actual largest.</li>
+    </ol>
+
+<pre><code>// Find Largest Number — JavaScript
+function findLargest(numbers) {
+  let largest = numbers[0]; // Step 1: Assume first is largest
+
+  for (let i = 1; i < numbers.length; i++) { // Step 2: Loop
+    if (numbers[i] > largest) {              // Step 3: Compare
+      largest = numbers[i];                  // Update if bigger
+    }
+  }
+  return largest; // Step 4: Return result
+}
+
+console.log(findLargest([3, 7, 1, 9, 4])); // Output: 9
+</code></pre>
+
+    <h2>Understanding Time Complexity (Big O)</h2>
+    <p>When we analyze algorithms, we measure how their performance changes as the input size (n) grows. This is called <strong>Big O Notation</strong>. The algorithm above checks every single element once — so it takes time proportional to the number of elements. We call this <strong>O(n)</strong> — Linear Time.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 500 200" width="100%" height="200">
+        <line x1="40" y1="170" x2="460" y2="170" stroke="var(--accent-green)" stroke-width="2"/>
+        <line x1="40" y1="20" x2="40" y2="170" stroke="var(--accent-green)" stroke-width="2"/>
+        <text x="240" y="195" fill="var(--text-muted)" text-anchor="middle" font-size="12">Input Size (n)</text>
+        <text x="15" y="100" fill="var(--text-muted)" text-anchor="middle" font-size="12" transform="rotate(-90 15 100)">Time</text>
+        <polyline points="40,160 150,130 260,100 370,70 460,40" fill="none" stroke="var(--accent-green-light)" stroke-width="2.5"/>
+        <text x="465" y="38" fill="var(--accent-green-light)" font-size="11">O(n)</text>
+        <polyline points="40,160 150,158 260,156 370,154 460,152" fill="none" stroke="#888" stroke-width="2" stroke-dasharray="5,4"/>
+        <text x="465" y="150" fill="#888" font-size="11">O(1)</text>
+      </svg>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px">Figure: O(n) grows linearly. O(1) is constant — always the same time.</p>
+    </div>
+
+    <h2>Common Time Complexities</h2>
+    <ul>
+      <li><strong>O(1) — Constant:</strong> Accessing an array by index. Always instant.</li>
+      <li><strong>O(log n) — Logarithmic:</strong> Binary Search. Halves the problem each step.</li>
+      <li><strong>O(n) — Linear:</strong> Scanning a list once. Like finding the max above.</li>
+      <li><strong>O(n log n) — Linearithmic:</strong> Merge Sort & Quick Sort. Very efficient for sorting.</li>
+      <li><strong>O(n²) — Quadratic:</strong> Bubble Sort. Nested loops — avoid on large datasets.</li>
+      <li><strong>O(2ⁿ) — Exponential:</strong> Brute force solutions. Only works for tiny inputs.</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="dsa-intro.html" class="btn">&lt; Prev</a>
+      <a href="index.html" class="btn ">1</a>
+      <a href="dsa-intro.html" class="btn ">2</a>
+      <a href="simple-algorithm.html" class="btn active">3</a>
+      <a href="arrays.html" class="btn ">4</a>
+      <a href="array-operations.html" class="btn ">5</a>
+      <a href="arrays.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
