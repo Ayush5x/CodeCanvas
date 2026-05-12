@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Insertion Sort - CodeCanvas</title>
+  <meta name="description" content="Learn the Insertion Sort algorithm, how it works with step-by-step examples, and its complexity analysis.">
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  
+  <button id="mobile-toggle" class="mobile-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>DSA Tutorial</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-category">DSA Tutorial</div>
+      <ul>
+        <li><a href="index.html">DSA HOME</a></li>
+        <li><a href="dsa-intro.html">DSA Intro</a></li>
+        <li><a href="simple-algorithm.html">DSA Simple Algorithm</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Arrays</div>
+      <ul>
+        <li><a href="arrays.html">DSA Arrays</a></li>
+        <li><a href="array-operations.html">Array Operations</a></li>
+        <li><a href="multi-dimensional-arrays.html">Multi-dimensional Arrays</a></li>
+      </ul>
+
+      <div class="sidebar-category">Sorting Algorithms</div>
+      <ul>
+        <li><a href="bubble-sort.html">DSA Bubble Sort</a></li>
+        <li><a href="selection-sort.html">DSA Selection Sort</a></li>
+        <li><a href="insertion-sort.html">DSA Insertion Sort</a></li>
+        <li><a href="quick-sort.html">DSA Quick Sort</a></li>
+        <li><a href="counting-sort.html">DSA Counting Sort</a></li>
+        <li><a href="radix-sort.html">DSA Radix Sort</a></li>
+        <li><a href="merge-sort.html">DSA Merge Sort</a></li>
+      </ul>
+
+      <div class="sidebar-category">Searching Algorithms</div>
+      <ul>
+        <li><a href="linear-search.html">DSA Linear Search</a></li>
+        <li><a href="binary-search.html">DSA Binary Search</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Linked Lists</div>
+      <ul>
+        <li><a href="linked-lists.html">DSA Linked Lists</a></li>
+        <li><a href="linked-lists-memory.html">DSA Linked Lists in Memory</a></li>
+        <li><a href="linked-lists-types.html">DSA Linked Lists Types</a></li>
+        <li><a href="linked-lists-operations.html">Linked Lists Operations</a></li>
+      </ul>
+
+      <div class="sidebar-category">Stacks & Queues</div>
+      <ul>
+        <li><a href="stacks.html">DSA Stacks</a></li>
+        <li><a href="queues.html">DSA Queues</a></li>
+      </ul>
+
+      <div class="sidebar-category">Hash Tables</div>
+      <ul>
+        <li><a href="hash-tables.html">DSA Hash Tables</a></li>
+        <li><a href="hash-maps.html">DSA Hash Maps</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Trees</div>
+      <ul>
+        <li><a href="trees.html">DSA Trees</a></li>
+        <li><a href="binary-trees.html">DSA Binary Trees</a></li>
+        <li><a href="tree-pre-order.html">DSA Pre-order Traversal</a></li>
+        <li><a href="tree-in-order.html">DSA In-order Traversal</a></li>
+        <li><a href="tree-post-order.html">DSA Post-order Traversal</a></li>
+        <li><a href="tree-array-implementation.html">DSA Array Implementation</a></li>
+        <li><a href="binary-search-trees.html">DSA Binary Search Trees</a></li>
+        <li><a href="avl-trees.html">DSA AVL Trees</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Graphs</div>
+      <ul>
+        <li><a href="graphs.html">DSA Graphs</a></li>
+        <li><a href="graphs-implementation.html">Graphs Implementation</a></li>
+        <li><a href="graphs-traversal.html">DSA Graphs Traversal</a></li>
+        <li><a href="graphs-cycle-detection.html">DSA Cycle Detection</a></li>
+      </ul>
+
+      <div class="sidebar-category">Shortest Path</div>
+      <ul>
+        <li><a href="shortest-path.html">DSA Shortest Path</a></li>
+        <li><a href="dijkstras.html">DSA Dijkstra's</a></li>
+        <li><a href="bellman-ford.html">DSA Bellman-Ford</a></li>
+      </ul>
+
+      <div class="sidebar-category">Minimum Spanning Tree</div>
+      <ul>
+        <li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a></li>
+        <li><a href="prims.html">DSA Prim's</a></li>
+        <li><a href="kruskals.html">DSA Kruskal's</a></li>
+      </ul>
+
+      <div class="sidebar-category">Maximum Flow</div>
+      <ul>
+        <li><a href="maximum-flow.html">DSA Maximum Flow</a></li>
+        <li><a href="ford-fulkerson.html">DSA Ford-Fulkerson</a></li>
+        <li><a href="edmonds-karp.html">DSA Edmonds-Karp</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="back-link">← Back to CodeCanvas</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="selection-sort.html" class="btn">&lt; Prev</a>
+      <a href="bubble-sort.html" class="btn ">7</a>
+      <a href="selection-sort.html" class="btn ">8</a>
+      <a href="insertion-sort.html" class="btn active">9</a>
+      <a href="quick-sort.html" class="btn ">10</a>
+      <a href="counting-sort.html" class="btn ">11</a>
+      <a href="quick-sort.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Insertion Sort</h1>
+
+    <div class="highlight-box">
+      <p><strong>Insertion Sort</strong> is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.</p>
+    </div>
+
+    <h2>How Insertion Sort Works</h2>
+    <p>The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.</p>
+    <p>Example: <code>[12, 11, 13, 5, 6]</code></p>
+    <ol>
+      <li>Assume 12 is sorted. Unsorted is <code>[11, 13, 5, 6]</code>.</li>
+      <li>Pick 11. Compare 11 with 12. 11 < 12, so move 12 and insert 11 before it. Array: <code>[11, 12, 13, 5, 6]</code>.</li>
+      <li>Pick 13. Compare 13 with 12. 13 > 12, so 13 stays. Array: <code>[11, 12, 13, 5, 6]</code>.</li>
+      <li>Pick 5. Compare 5 with 13, 12, 11. 5 is smallest, move all elements and insert 5 at the beginning. Array: <code>[5, 11, 12, 13, 6]</code>.</li>
+      <li>Pick 6. Compare 6 with 13, 12, 11. Insert 6 after 5. Array: <code>[5, 6, 11, 12, 13]</code>.</li>
+    </ol>
+
+    <h2>Implementation</h2>
+<pre><code>// Insertion Sort Implementation in JavaScript
+function insertionSort(arr) {
+    let n = arr.length;
+    for (let i = 1; i < n; i++) {
+        let key = arr[i];
+        let j = i - 1;
+        /* Move elements of arr[0..i-1], that are
+           greater than key, to one position ahead
+           of their current position */
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+
+const data = [12, 11, 13, 5, 6];
+console.log("Sorted Array:", insertionSort(data));
+</code></pre>
+
+    <h2>Complexity Analysis</h2>
+    <ul>
+      <li><strong>Time Complexity:</strong> O(n²) in worst and average cases. O(n) in best case (already sorted).</li>
+      <li><strong>Auxiliary Space:</strong> O(1) as it sorts the array in-place.</li>
+      <li><strong>Stability:</strong> Yes, it is a stable sorting algorithm.</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="selection-sort.html" class="btn">&lt; Prev</a>
+      <a href="bubble-sort.html" class="btn ">7</a>
+      <a href="selection-sort.html" class="btn ">8</a>
+      <a href="insertion-sort.html" class="btn active">9</a>
+      <a href="quick-sort.html" class="btn ">10</a>
+      <a href="counting-sort.html" class="btn ">11</a>
+      <a href="quick-sort.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

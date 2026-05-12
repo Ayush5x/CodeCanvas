@@ -1,0 +1,203 @@
+/* Heap Visualizer Styles */
+
+.heap-visualizer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.heap-header {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  margin: 26px;
+  max-width:1547px;
+  max-height: 190px;
+}
+
+.heap-node-circle {
+  fill: rgba(30, 41, 59, 0.8);
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 2;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heap-node-circle.active {
+  stroke: #00f3ff;
+  fill: rgba(0, 243, 255, 0.1);
+  filter: drop-shadow(0 0 12px rgba(0, 243, 255, 0.5));
+  stroke-width: 4;
+}
+
+.heap-node-circle.comparing {
+  stroke: #ff9d00;
+  stroke-width: 3;
+  animation: pulse-compare 1s infinite;
+}
+
+@keyframes pulse-compare {
+  0% { transform: scale(1); filter: drop-shadow(0 0 5px #ff9d0055); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 15px #ff9d0088); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 5px #ff9d0055); }
+}
+
+.heap-node-text {
+  fill: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.heap-idx-text {
+  fill: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  font-weight: 700;
+  text-anchor: middle;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Reusing BST styling components but targeting locally if needed */
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.control-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.bst-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bst-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bst-btn.primary {
+  background: rgba(0, 243, 255, 0.1);
+  color: #00f3ff;
+  border-color: rgba(0, 243, 255, 0.3);
+}
+
+.bst-btn.primary:hover:not(:disabled) {
+  background: rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.bst-input {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  outline: none;
+}
+
+.bst-slider {
+  accent-color: #00f3ff;
+  cursor: pointer;
+}
+
+.canvas-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* --- Mobile & Tablet Responsiveness (≤1024px) --- */
+@media (max-width: 1024px) {
+  .heap-visualizer-container {
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
+  .heap-header {
+    padding: 1.5rem 1rem;
+    margin: 10px;
+    max-height: none;
+    max-width: 100%;
+  }
+  .heap-main {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  .heap-side-panel {
+    max-width: 100%;
+    width: 100% !important;
+  }
+  .heap-viz-panel {
+    min-height: 400px;
+    height: 50vh;
+  }
+  .bst-code-viewer {
+    max-height: 300px;
+  }
+  .bst-telemetry-panel {
+    width: 100%;
+  }
+  .bst-btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .bst-input {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .heap-node-circle {
+    r: 36px;
+    stroke-width: 1.5;
+  }
+  .heap-node-text {
+    font-size: 26px;
+  }
+  .heap-idx-text {
+    font-size: 12px;
+    y: 55;
+  }
+}
+
+/* --- Mobile Phones (≤767px) --- */
+@media (max-width: 767px) {
+  .control-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .heap-viz-panel {
+    min-height: 450px;
+    height: 60vh;
+  }
+}

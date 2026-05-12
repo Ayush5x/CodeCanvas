@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+.sll-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #030303;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.sll-top-info {
+  padding: 80px 2rem 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sll-main {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  flex: 1;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+.sll-left-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.sll-panel {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.sll-panel-header {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sll-code-panel {
+  flex: 1;
+  min-height: 350px;
+}
+
+.sll-code-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sll-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+}
+
+.sll-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sll-input-group label {
+  font-size: 8px;
+  color: #52525b;
+  letter-spacing: 0.1em;
+}
+
+.sll-input-group input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.sll-action-btn {
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #a1a1aa;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.sll-action-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.sll-action-btn.primary {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.sll-range {
+  width: 100%;
+  accent-color: #10b981;
+  height: 4px;
+  cursor: pointer;
+}
+
+.sll-play-btn {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.sll-play-btn.paused {
+  color: #ffd700;
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+/* Visual Pane */
+.sll-visual-pane {
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sll-canvas-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.sll-node-line {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sll-node-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sll-node-v2 {
+  width: 150px;
+  height: 110px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.sll-node-v2.is-active {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.02) 100%);
+}
+
+.sll-node-addr { font-size: 8px; color: #52525b; }
+.sll-node-val-v2 { font-size: 1.6rem; font-weight: 700; text-align: center; color: #fff; }
+.sll-node-ptr-v2 { font-size: 8px; color: #00ffcc; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 0.4rem; }
+
+.sll-pointer-tags-container {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.sll-pointer-tag {
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.sll-pointer-tag.curr { background: #3b82f6; color: #fff; }
+.sll-pointer-tag.prev { background: #ef4444; color: #fff; }
+.sll-pointer-tag.next { background: #10b981; color: #fff; }
+.sll-pointer-tag.new { background: #ffd700; color: #000; }
+.sll-pointer-tag.found { background: #fbbf24; color: #000; }
+.sll-pointer-tag.head { background: rgba(255,255,255,0.1); color: #fff; }
+
+.sll-memory-footer {
+  padding: 1.25rem;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sll-memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  gap: 0.4rem;
+}
+
+.sll-memory-slot {
+  font-size: 8px;
+  padding: 0.4rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 4px;
+  text-align: center;
+  color: #3f3f46;
+  transition: all 0.3s;
+}
+
+.sll-memory-slot.active {
+  background: #ffd700;
+  color: #000;
+  border-color: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.sll-empty-state {
+  margin: auto;
+  text-align: center;
+  color: #27272a;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .sll-container {
+    height: auto;
+    overflow: visible;
+  }
+
+  .sll-top-info {
+    padding: 100px 1.5rem 1.5rem 1.5rem;
+  }
+
+  .sll-main {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .sll-left-pane {
+    overflow: visible;
+  }
+
+  .sll-panel {
+    min-height: auto;
+  }
+
+  .sll-code-panel {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .sll-visual-pane {
+    order: -1; /* Show visualization above controls on mobile */
+    min-height: 400px;
+  }
+
+  .sll-canvas-main {
+    padding: 3rem 1rem;
+  }
+
+  .sll-node-v2 {
+    width: 130px;
+    height: 95px;
+  }
+
+  .sll-node-val-v2 {
+    font-size: 1.3rem;
+  }
+
+  .sll-memory-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .sll-top-info {
+    padding: 90px 1rem 1.5rem 1rem;
+  }
+
+  .sll-main {
+    padding: 1rem;
+  }
+
+  .sll-controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sll-action-btn[style*="grid-column"] {
+    grid-column: span 1 !important;
+  }
+
+  .sll-node-v2 {
+    width: 110px;
+    height: 85px;
+  }
+
+  .sll-node-val-v2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ─── Mobile Title Font Size (phones < 768px) ──────────────────────────── */
+@media (max-width: 767px) {
+  .sll-top-info h1 {
+    font-size: 24px !important;  /* 1.5rem — readable on small phones */
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+

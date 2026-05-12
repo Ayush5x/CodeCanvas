@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Tree Array Implementation - CodeCanvas</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  <!-- Top Navbar -->
+  
+
+  <button id="mobile-toggle" class="mobile-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>DSA Tutorial</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-category">DSA Tutorial</div>
+      <ul>
+        <li><a href="index.html">DSA HOME</a></li>
+        <li><a href="dsa-intro.html">DSA Intro</a></li>
+        <li><a href="simple-algorithm.html">DSA Simple Algorithm</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Arrays</div>
+      <ul>
+        <li><a href="arrays.html">DSA Arrays</a></li>
+        <li><a href="array-operations.html">Array Operations</a></li>
+        <li><a href="multi-dimensional-arrays.html">Multi-dimensional Arrays</a></li>
+      </ul>
+
+      <div class="sidebar-category">Sorting Algorithms</div>
+      <ul>
+        <li><a href="bubble-sort.html">DSA Bubble Sort</a></li>
+        <li><a href="selection-sort.html">DSA Selection Sort</a></li>
+        <li><a href="insertion-sort.html">DSA Insertion Sort</a></li>
+        <li><a href="quick-sort.html">DSA Quick Sort</a></li>
+        <li><a href="counting-sort.html">DSA Counting Sort</a></li>
+        <li><a href="radix-sort.html">DSA Radix Sort</a></li>
+        <li><a href="merge-sort.html">DSA Merge Sort</a></li>
+      </ul>
+
+      <div class="sidebar-category">Searching Algorithms</div>
+      <ul>
+        <li><a href="linear-search.html">DSA Linear Search</a></li>
+        <li><a href="binary-search.html">DSA Binary Search</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Linked Lists</div>
+      <ul>
+        <li><a href="linked-lists.html">DSA Linked Lists</a></li>
+        <li><a href="linked-lists-memory.html">DSA Linked Lists in Memory</a></li>
+        <li><a href="linked-lists-types.html">DSA Linked Lists Types</a></li>
+        <li><a href="linked-lists-operations.html">Linked Lists Operations</a></li>
+      </ul>
+
+      <div class="sidebar-category">Stacks & Queues</div>
+      <ul>
+        <li><a href="stacks.html">DSA Stacks</a></li>
+        <li><a href="queues.html">DSA Queues</a></li>
+      </ul>
+
+      <div class="sidebar-category">Hash Tables</div>
+      <ul>
+        <li><a href="hash-tables.html">DSA Hash Tables</a></li>
+        <li><a href="hash-maps.html">DSA Hash Maps</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Trees</div>
+      <ul>
+        <li><a href="trees.html">DSA Trees</a></li>
+        <li><a href="binary-trees.html">DSA Binary Trees</a></li>
+        <li><a href="tree-pre-order.html">DSA Pre-order Traversal</a></li>
+        <li><a href="tree-in-order.html">DSA In-order Traversal</a></li>
+        <li><a href="tree-post-order.html">DSA Post-order Traversal</a></li>
+        <li><a href="tree-array-implementation.html">DSA Array Implementation</a></li>
+        <li><a href="binary-search-trees.html">DSA Binary Search Trees</a></li>
+        <li><a href="avl-trees.html">DSA AVL Trees</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Graphs</div>
+      <ul>
+        <li><a href="graphs.html">DSA Graphs</a></li>
+        <li><a href="graphs-implementation.html">Graphs Implementation</a></li>
+        <li><a href="graphs-traversal.html">DSA Graphs Traversal</a></li>
+        <li><a href="graphs-cycle-detection.html">DSA Cycle Detection</a></li>
+      </ul>
+
+      <div class="sidebar-category">Shortest Path</div>
+      <ul>
+        <li><a href="shortest-path.html">DSA Shortest Path</a></li>
+        <li><a href="dijkstras.html">DSA Dijkstra's</a></li>
+        <li><a href="bellman-ford.html">DSA Bellman-Ford</a></li>
+      </ul>
+
+      <div class="sidebar-category">Minimum Spanning Tree</div>
+      <ul>
+        <li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a></li>
+        <li><a href="prims.html">DSA Prim's</a></li>
+        <li><a href="kruskals.html">DSA Kruskal's</a></li>
+      </ul>
+
+      <div class="sidebar-category">Maximum Flow</div>
+      <ul>
+        <li><a href="maximum-flow.html">DSA Maximum Flow</a></li>
+        <li><a href="ford-fulkerson.html">DSA Ford-Fulkerson</a></li>
+        <li><a href="edmonds-karp.html">DSA Edmonds-Karp</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="back-link">← Back to CodeCanvas</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="tree-post-order.html" class="btn">&lt; Prev</a>
+      <a href="tree-in-order.html" class="btn ">27</a>
+      <a href="tree-post-order.html" class="btn ">28</a>
+      <a href="tree-array-implementation.html" class="btn active">29</a>
+      <a href="binary-search-trees.html" class="btn ">30</a>
+      <a href="avl-trees.html" class="btn ">31</a>
+      <a href="binary-search-trees.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>Tree Array Implementation</h1>
+
+    <div class="highlight-box">
+      <p>While trees are normally implemented using Node objects and pointers, a Complete Binary Tree can be perfectly and efficiently represented using a single flat Array.</p>
+    </div>
+
+    <h2>Why Use an Array?</h2>
+    <p>Using an array saves the memory overhead of storing `left` and `right` pointers. This is the standard way to implement a <strong>Heap</strong> (like a Priority Queue).</p>
+
+    <h2>The Math (0-Indexed)</h2>
+    <p>If the Root node is at index <code>i = 0</code>, you can calculate the exact index of any child or parent using simple math:</p>
+    <ul>
+      <li><strong>Left Child:</strong> <code>(2 * i) + 1</code></li>
+      <li><strong>Right Child:</strong> <code>(2 * i) + 2</code></li>
+      <li><strong>Parent:</strong> <code>Math.floor((i - 1) / 2)</code></li>
+    </ul>
+
+    <div class="diagram">
+      <svg width="500" height="200" viewBox="0 0 500 200">
+        <!-- Array Representation -->
+        <text x="250" y="30" fill="var(--text-main)" text-anchor="middle" font-size="16" font-weight="bold">Array: [ A, B, C, D, E ]</text>
+        
+        <rect x="100" y="50" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="130" y="75" fill="#f0f0f0" text-anchor="middle" font-size="16">A</text>
+        <text x="130" y="45" fill="var(--text-muted)" text-anchor="middle" font-size="12">0</text>
+        
+        <rect x="160" y="50" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="190" y="75" fill="#f0f0f0" text-anchor="middle" font-size="16">B</text>
+        <text x="190" y="45" fill="var(--text-muted)" text-anchor="middle" font-size="12">1</text>
+        
+        <rect x="220" y="50" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="250" y="75" fill="#f0f0f0" text-anchor="middle" font-size="16">C</text>
+        <text x="250" y="45" fill="var(--text-muted)" text-anchor="middle" font-size="12">2</text>
+        
+        <rect x="280" y="50" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="310" y="75" fill="#f0f0f0" text-anchor="middle" font-size="16">D</text>
+        <text x="310" y="45" fill="var(--text-muted)" text-anchor="middle" font-size="12">3</text>
+        
+        <rect x="340" y="50" width="60" height="40" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="370" y="75" fill="#f0f0f0" text-anchor="middle" font-size="16">E</text>
+        <text x="370" y="45" fill="var(--text-muted)" text-anchor="middle" font-size="12">4</text>
+
+        <!-- Math examples -->
+        <text x="250" y="130" fill="var(--accent-green-light)" text-anchor="middle" font-size="14">Left Child of B (index 1) = (2 * 1) + 1 = Index 3 (D)</text>
+        <text x="250" y="155" fill="var(--accent-green-light)" text-anchor="middle" font-size="14">Right Child of B (index 1) = (2 * 1) + 2 = Index 4 (E)</text>
+      </svg>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Figure: Mathematical relationship between array indices to form a tree.</p>
+    </div>
+
+    <h2>Disadvantages</h2>
+    <p>If the tree is NOT Complete (meaning it has missing nodes), the array will have empty holes (null values). This wastes a lot of memory, making array representations bad for skewed trees.</p>
+
+    <div class="pagination-top">
+      <a href="tree-post-order.html" class="btn">&lt; Prev</a>
+      <a href="tree-in-order.html" class="btn ">27</a>
+      <a href="tree-post-order.html" class="btn ">28</a>
+      <a href="tree-array-implementation.html" class="btn active">29</a>
+      <a href="binary-search-trees.html" class="btn ">30</a>
+      <a href="avl-trees.html" class="btn ">31</a>
+      <a href="binary-search-trees.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

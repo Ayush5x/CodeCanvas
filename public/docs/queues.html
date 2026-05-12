@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Queues - CodeCanvas</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  <!-- Top Navbar -->
+  
+
+  <button id="mobile-toggle" class="mobile-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>DSA Tutorial</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-category">DSA Tutorial</div>
+      <ul>
+        <li><a href="index.html">DSA HOME</a></li>
+        <li><a href="dsa-intro.html">DSA Intro</a></li>
+        <li><a href="simple-algorithm.html">DSA Simple Algorithm</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Arrays</div>
+      <ul>
+        <li><a href="arrays.html">DSA Arrays</a></li>
+        <li><a href="array-operations.html">Array Operations</a></li>
+        <li><a href="multi-dimensional-arrays.html">Multi-dimensional Arrays</a></li>
+      </ul>
+
+      <div class="sidebar-category">Sorting Algorithms</div>
+      <ul>
+        <li><a href="bubble-sort.html">DSA Bubble Sort</a></li>
+        <li><a href="selection-sort.html">DSA Selection Sort</a></li>
+        <li><a href="insertion-sort.html">DSA Insertion Sort</a></li>
+        <li><a href="quick-sort.html">DSA Quick Sort</a></li>
+        <li><a href="counting-sort.html">DSA Counting Sort</a></li>
+        <li><a href="radix-sort.html">DSA Radix Sort</a></li>
+        <li><a href="merge-sort.html">DSA Merge Sort</a></li>
+      </ul>
+
+      <div class="sidebar-category">Searching Algorithms</div>
+      <ul>
+        <li><a href="linear-search.html">DSA Linear Search</a></li>
+        <li><a href="binary-search.html">DSA Binary Search</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Linked Lists</div>
+      <ul>
+        <li><a href="linked-lists.html">DSA Linked Lists</a></li>
+        <li><a href="linked-lists-memory.html">DSA Linked Lists in Memory</a></li>
+        <li><a href="linked-lists-types.html">DSA Linked Lists Types</a></li>
+        <li><a href="linked-lists-operations.html">Linked Lists Operations</a></li>
+      </ul>
+
+      <div class="sidebar-category">Stacks & Queues</div>
+      <ul>
+        <li><a href="stacks.html">DSA Stacks</a></li>
+        <li><a href="queues.html">DSA Queues</a></li>
+      </ul>
+
+      <div class="sidebar-category">Hash Tables</div>
+      <ul>
+        <li><a href="hash-tables.html">DSA Hash Tables</a></li>
+        <li><a href="hash-maps.html">DSA Hash Maps</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Trees</div>
+      <ul>
+        <li><a href="trees.html">DSA Trees</a></li>
+        <li><a href="binary-trees.html">DSA Binary Trees</a></li>
+        <li><a href="tree-pre-order.html">DSA Pre-order Traversal</a></li>
+        <li><a href="tree-in-order.html">DSA In-order Traversal</a></li>
+        <li><a href="tree-post-order.html">DSA Post-order Traversal</a></li>
+        <li><a href="tree-array-implementation.html">DSA Array Implementation</a></li>
+        <li><a href="binary-search-trees.html">DSA Binary Search Trees</a></li>
+        <li><a href="avl-trees.html">DSA AVL Trees</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Graphs</div>
+      <ul>
+        <li><a href="graphs.html">DSA Graphs</a></li>
+        <li><a href="graphs-implementation.html">Graphs Implementation</a></li>
+        <li><a href="graphs-traversal.html">DSA Graphs Traversal</a></li>
+        <li><a href="graphs-cycle-detection.html">DSA Cycle Detection</a></li>
+      </ul>
+
+      <div class="sidebar-category">Shortest Path</div>
+      <ul>
+        <li><a href="shortest-path.html">DSA Shortest Path</a></li>
+        <li><a href="dijkstras.html">DSA Dijkstra's</a></li>
+        <li><a href="bellman-ford.html">DSA Bellman-Ford</a></li>
+      </ul>
+
+      <div class="sidebar-category">Minimum Spanning Tree</div>
+      <ul>
+        <li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a></li>
+        <li><a href="prims.html">DSA Prim's</a></li>
+        <li><a href="kruskals.html">DSA Kruskal's</a></li>
+      </ul>
+
+      <div class="sidebar-category">Maximum Flow</div>
+      <ul>
+        <li><a href="maximum-flow.html">DSA Maximum Flow</a></li>
+        <li><a href="ford-fulkerson.html">DSA Ford-Fulkerson</a></li>
+        <li><a href="edmonds-karp.html">DSA Edmonds-Karp</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="back-link">← Back to CodeCanvas</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="stacks.html" class="btn">&lt; Prev</a>
+      <a href="linked-lists-operations.html" class="btn ">19</a>
+      <a href="stacks.html" class="btn ">20</a>
+      <a href="queues.html" class="btn active">21</a>
+      <a href="hash-tables.html" class="btn ">22</a>
+      <a href="hash-maps.html" class="btn ">23</a>
+      <a href="hash-tables.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Queues</h1>
+
+    <div class="highlight-box">
+      <p>A Queue is a linear data structure that follows the FIFO (First In First Out) principle.</p>
+    </div>
+
+    <h2>What is a Queue?</h2>
+    <p>A Queue is a linear structure which follows a particular order in which the operations are performed. The order is First In First Out (FIFO). This means the first element added to the queue will be the first one to be removed.</p>
+    <p>A good example of a queue is any queue of consumers for a resource where the consumer that came first is served first (like a line at a ticket counter).</p>
+
+    <div class="diagram">
+      <svg width="400" height="150" viewBox="0 0 400 150">
+        <!-- Container -->
+        <path d="M 50 40 L 350 40" fill="none" stroke="var(--border-color)" stroke-width="4"/>
+        <path d="M 50 110 L 350 110" fill="none" stroke="var(--border-color)" stroke-width="4"/>
+        
+        <!-- Elements -->
+        <rect x="70" y="50" width="60" height="50" fill="var(--accent-green-bg)" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="100" y="75" fill="var(--text-main)" text-anchor="middle" font-size="16">10</text>
+        <text x="100" y="130" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">Front</text>
+
+        <rect x="140" y="50" width="60" height="50" fill="#151515" stroke="var(--accent-green)" stroke-width="2"/>
+        <text x="170" y="75" fill="var(--text-main)" text-anchor="middle" font-size="16">20</text>
+        
+        <rect x="210" y="50" width="60" height="50" fill="#151515" stroke="var(--accent-green)" stroke-width="2"/>
+        <text x="240" y="75" fill="var(--text-main)" text-anchor="middle" font-size="16">30</text>
+        
+        <rect x="280" y="50" width="60" height="50" fill="#151515" stroke="var(--accent-green)" stroke-width="2"/>
+        <text x="310" y="75" fill="var(--text-main)" text-anchor="middle" font-size="16">40</text>
+        <text x="310" y="130" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">Rear</text>
+
+        <!-- Arrows -->
+        <path d="M 10 75 L 40 75" stroke="var(--accent-green-light)" stroke-width="3" marker-end="url(#arrow)"/>
+        <text x="25" y="60" fill="var(--accent-green-light)" text-anchor="middle">Dequeue</text>
+        
+        <path d="M 360 75 L 390 75" stroke="var(--accent-green-light)" stroke-width="3" marker-end="url(#arrow)"/>
+        <text x="375" y="60" fill="var(--accent-green-light)" text-anchor="middle">Enqueue</text>
+      </svg>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Figure: Enqueue adds to the Rear. Dequeue removes from the Front.</p>
+    </div>
+
+    <h2>Queue Operations</h2>
+    <ul>
+      <li><strong>Enqueue:</strong> Adds an item to the queue. If the queue is full, then it is said to be an Overflow condition.</li>
+      <li><strong>Dequeue:</strong> Removes an item from the queue. The items are popped in the same order in which they are pushed.</li>
+      <li><strong>Front:</strong> Get the front item from queue.</li>
+      <li><strong>Rear:</strong> Get the last item from queue.</li>
+    </ul>
+
+    <h2>Code Example</h2>
+    <p>A basic implementation of a Queue using an Array in JavaScript:</p>
+<pre><code>class Queue {
+  constructor() {
+    this.items = [];
+  }
+  
+  // Add element to the queue (Rear)
+  enqueue(element) {
+    this.items.push(element);
+  }
+  
+  // Remove element from the queue (Front)
+  dequeue() {
+    if(this.isEmpty()) return "Underflow";
+    return this.items.shift();
+  }
+  
+  front() {
+    if(this.isEmpty()) return "No elements in Queue";
+    return this.items[0];
+  }
+  
+  isEmpty() {
+    return this.items.length === 0;
+  }
+}
+</code></pre>
+
+    <div class="pagination-top">
+      <a href="stacks.html" class="btn">&lt; Prev</a>
+      <a href="linked-lists-operations.html" class="btn ">19</a>
+      <a href="stacks.html" class="btn ">20</a>
+      <a href="queues.html" class="btn active">21</a>
+      <a href="hash-tables.html" class="btn ">22</a>
+      <a href="hash-maps.html" class="btn ">23</a>
+      <a href="hash-tables.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

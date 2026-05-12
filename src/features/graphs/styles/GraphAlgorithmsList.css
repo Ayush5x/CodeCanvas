@@ -1,0 +1,274 @@
+/**
+ * Graph Algorithms List Styles
+ * Dark blue gradient glassy texture theme
+ */
+
+.graph-algorithms-container {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.graph-algorithms-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.graph-algorithms-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-button {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  text-decoration: none;
+}
+
+.graph-algorithms-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 1rem 0 0.5rem 0;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.graph-algorithms-header p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.algorithms-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.algorithm-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.algorithm-card:hover {
+  border-color: var(--card-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-link {
+  display: block;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: var(--card-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #f8fafc;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.difficulty, .complexity {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.difficulty {
+  color: #fbbf24;
+}
+
+.complexity {
+  color: #34d399;
+}
+
+.card-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--card-color), rgba(255, 255, 255, 0.2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.algorithm-card:hover .card-gradient {
+  transform: scaleX(1);
+}
+
+.algorithms-info {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.algorithms-info h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #f8fafc;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.info-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #3b82f6;
+}
+
+.info-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .graph-algorithms-header h1 {
+    font-size: 2rem;
+  }
+  
+  .graph-algorithms-header p {
+    font-size: 1rem;
+  }
+  
+  .algorithms-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .algorithm-card {
+    margin: 0;
+  }
+  
+  .card-link {
+    padding: 1.5rem;
+  }
+  
+  .home-button {
+    position: static;
+    margin-bottom: 1rem;
+    width: fit-content;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .algorithms-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+  }
+  
+  .card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

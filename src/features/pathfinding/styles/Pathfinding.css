@@ -1,0 +1,667 @@
+/* Pathfinding.css - Styling for the pathfinding visualizer */
+
+/* Main container with proper layout structure */
+.pathfinding-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #100E1A;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header section with fixed height allocation */
+.pathfinding-header {
+  flex-shrink: 0; /* Prevent shrinking */
+  min-height: 80px; /* Match other visualizers */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #30363d;
+  background-color: rgba(13, 17, 23, 0.8);
+  position: relative;
+  z-index: 10;
+}
+
+/* Home button styling to match other visualizers */
+.pathfinding-header .home-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border: 2px solid #e1e5e9;
+  border-radius: 3px;
+  color: #24292f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  z-index: 10;
+}
+
+.pathfinding-header .home-button span {
+  margin: 0;
+}
+
+.pathfinding-header .home-button:hover {
+  background-color: #f6f8fa;
+  border-color: #d0d7de;
+  color: #0969da;
+}
+
+/* Header title styling */
+.pathfinding-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #c9d1d9;
+  text-align: center;
+  flex: 1;
+  /* Add gradient effect like other headers */
+  background: linear-gradient(90deg, #9c4ddd, #8b3ed3, #b286ff, #f561f5, #d891ef);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waveGradient 5s ease infinite;
+  will-change: background-position;
+}
+
+/* Control buttons container */
+.pathfinding-header .control-buttons {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Algorithm selector styling */
+.pathfinding-header select {
+  padding: 8px 12px;
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pathfinding-header select:hover {
+  border-color: #58a6ff;
+}
+
+.pathfinding-header select:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+/* Button styling */
+.pathfinding-header button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pathfinding-header .clear-btn {
+  background-color: #dc3545; /* Red for destructive action */
+  color: #ffffff;
+}
+
+.pathfinding-header .clear-btn:hover {
+  background-color: #c82333;
+}
+
+.pathfinding-header .instructions-btn {
+  background-color: #6e7681; /* Gray for neutral action */
+  color: #ffffff;
+}
+
+.pathfinding-header .instructions-btn:hover {
+  background-color: #8b949e;
+}
+
+.pathfinding-header .find-path-btn {
+  background-color: #238636; /* Green for primary action */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pathfinding-header .find-path-btn:hover {
+  background-color: #2ea043;
+}
+
+/* Responsive header styles */
+@media screen and (max-width: 1200px) {
+  .pathfinding-header .control-buttons {
+    gap: 8px;
+  }
+  
+  .pathfinding-header button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .pathfinding-header select {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  
+  .pathfinding-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pathfinding-header {
+    min-height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .pathfinding-header .home-button {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+  }
+  
+  .pathfinding-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .pathfinding-header .control-buttons {
+    position: static;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .pathfinding-header button,
+  .pathfinding-header select {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pathfinding-header {
+    min-height: 120px;
+  }
+  
+  .pathfinding-header .control-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .pathfinding-header button,
+  .pathfinding-header select {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .pathfinding-header .instructions-btn {
+    min-width: auto;
+    width: 100%;
+    height: 45px;
+    padding: 10px 20px;
+    font-size: 14px;
+    justify-content: center;
+  }
+  
+  .pathfinding-header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Stats section with fixed height allocation */
+.pathfinding-stats {
+  flex-shrink: 0; /* Prevent shrinking */
+  min-height: 80px; /* Reduced from 100px to give more space to grid */
+}
+
+/* Grid container that takes remaining space */
+.pathfinding-grid-container {
+  flex: 1; /* Take all remaining space */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px; /* Reduced padding for more grid space */
+  min-height: 400px; /* Ensure minimum height */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Grid table positioned within its dedicated container */
+table {
+  position: relative; /* Changed from absolute to relative */
+  z-index: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* Optimized size for better cell visibility */
+  width: 85vw;
+  height: 75vh;
+  max-width: 1400px; /* Reduced max width for better cell size */
+  max-height: 750px; /* Increased max height slightly */
+  min-width: 700px; /* Reduced min width */
+  min-height: 450px; /* Reduced min height */
+}
+
+td {
+  border: 1px solid #5bc9b1;
+  padding: 0;
+  border-collapse: collapse;
+  width: auto;
+  height: auto;
+  min-width: 20px; /* Ensure minimum cell width */
+  min-height: 20px; /* Ensure minimum cell height */
+  cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.node_start {
+  background-color: transparent;
+  position: relative;
+}
+
+.node_end {
+  background-color: transparent;
+  position: relative;
+}
+
+.node-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.node_wall {
+  background-color: transparent;
+  position: relative;
+}
+
+.wall-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.node_ {
+  background-color: transparent;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: grey;
+  }
+  100% {
+    background-color: #8a918a;
+  }
+}
+
+.node_visited {
+  background-color: rgba(4, 0, 255, 0.5);
+  animation-name: visited;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes visited {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(255, 0, 191, 0.5);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(255, 0, 191, 0.5);
+  }
+  75% {
+    transform: scale(1.2);
+    background-color: rgba(4, 0, 255, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(4, 0, 255, 0.5);
+  }
+}
+
+.node_path {
+  background-color: greenyellow;
+  animation-name: path_anime;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes path_anime {
+  0% {
+    transform: scale(0.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1);
+    background-color: yellow;
+  }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-btn {
+  height: 55px; /* Slightly reduced for better proportions */
+  width: auto;
+  min-width: 120px; /* Reduced slightly */
+  padding: 0 25px 0 15px; /* Asymmetric padding: less on left, more on right */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left-align content */
+  gap: 20px; /* Increased gap between icon and text for more visible separation */
+  font-size: 1rem; /* Standard readable size */
+  color: #fff;
+  background: linear-gradient(135deg, #58a6ff, #4a9eff);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px; /* Adjusted for the new height */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+  display: none;
+  z-index: 100;
+  animation: infoButtonAppear 0.5s ease-out;
+  font-weight: 500;
+  letter-spacing: 0.3px; /* Reduced letter spacing */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@keyframes infoButtonAppear {
+  0% {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.chat-btn:hover {
+  box-shadow: 0 8px 25px rgba(88, 166, 255, 0.5);
+  background: linear-gradient(135deg, #4a9eff, #58a6ff);
+}
+
+
+/* Icon styling within the button */
+.chat-btn svg {
+  font-size: 1.2rem; /* Proportional icon size */
+  flex-shrink: 0;
+  width: 1.2rem; /* Fixed width for consistency */
+  height: 1.2rem; /* Fixed height for consistency */
+  margin-right: 8px; /* Additional margin to ensure visible gap */
+}
+
+/* Remove duplicate text styling - now handled in main .chat-btn class */
+
+.chat-btn:focus {
+  animation: shadow-pulse 1s infinite;
+  outline: none;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 #343A40;
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(130, 90, 164, 0);
+  }
+}
+
+.chat-body {
+  height: auto;
+  width: auto;
+  min-width: 10vw;
+  background: #343A40;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  box-shadow: 4px 4px 4px gray;
+  border-radius: 8px;
+  color: black;
+  padding: 8px;
+  margin-left: 10px;
+}
+
+.chat-body .chat-head {
+  background: #343A40;
+  padding: 10px;
+  height: 20px;
+  font-family: verdana;
+}
+
+.progress2 {
+  border-radius: 30px;
+  background-color: gray;
+}
+
+.progress-bar2 {
+  height: 5px;
+  border-radius: 30px;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-moved .progress-bar2 {
+  background-color: #f3c623;
+  animation: progress 5s 1;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+    background: #f9bcca;
+  }
+  60% {
+    background: #f3c623;
+    box-shadow: 0 0 40px #f3c623;
+  }
+}
+
+/* Gradient animation for header title */
+@keyframes waveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.progress-text {
+  color: black;
+}
+
+.progress-text:hover .comment {
+  display: block;
+}
+
+.progress-text:hover .span-text {
+  display: none;
+}
+
+.comment {
+  display: none;
+}
+
+.info-title {
+  font-size: 2.125rem;
+  font-weight: 400;
+  line-height: 1.235;
+}
+
+/* Instructions modal */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #1a1a2e;
+  color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #5bc9b1;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(91, 201, 177, 0.5);
+}
+
+.modal h3 {
+  margin-top: 0;
+  color: #5bc9b1;
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.modal button {
+  background-color: #2A623D;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #4A3F6E;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments for better grid sizing */
+@media (max-width: 1200px) {
+  table {
+    width: 90vw;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pathfinding-header {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+    min-height: 80px;
+  }
+  
+  .pathfinding-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .pathfinding-stats {
+    padding: 10px;
+    min-height: 70px;
+  }
+  
+  table {
+    width: 95vw;
+    height: 70vh;
+    min-width: 300px;
+    min-height: 300px;
+  }
+  
+  td {
+    min-width: 15px;
+    min-height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pathfinding-grid-container {
+    padding: 10px;
+  }
+  
+  table {
+    width: 98vw;
+    height: 65vh;
+  }
+  
+  td {
+    min-width: 12px;
+    min-height: 12px;
+  }
+}

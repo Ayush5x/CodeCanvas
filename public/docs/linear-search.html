@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Linear Search - CodeCanvas</title>
+  <meta name="description" content="Learn the Linear Search algorithm, how it works with examples, and its complexity analysis.">
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  
+  <!-- Navbar injected by script.js -->
+  <!-- Sidebar injected by script.js -->
+
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="merge-sort.html" class="btn">&lt; Prev</a>
+      <a href="radix-sort.html" class="btn ">12</a>
+      <a href="merge-sort.html" class="btn ">13</a>
+      <a href="linear-search.html" class="btn active">14</a>
+      <a href="binary-search.html" class="btn ">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="binary-search.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Linear Search</h1>
+
+    <div class="highlight-box">
+      <p><strong>Linear Search</strong> is the simplest search algorithm. It works by checking every element of a list one by one until a match is found or the whole list has been searched.</p>
+    </div>
+
+    <h2>How Linear Search Works</h2>
+    <ol>
+      <li>Start from the leftmost element of <code>arr[]</code> and one by one compare <code>x</code> with each element of <code>arr[]</code>.</li>
+      <li>If <code>x</code> matches with an element, return the index.</li>
+      <li>If <code>x</code> doesn’t match with any of the elements, return -1.</li>
+    </ol>
+    <p>Example: Finding 20 in <code>[10, 50, 30, 70, 80, 20, 90, 40]</code></p>
+    <ul>
+      <li>Is 10 == 20? No.</li>
+      <li>Is 50 == 20? No.</li>
+      <li>...</li>
+      <li>Is 20 == 20? Yes! Found at index 5.</li>
+    </ul>
+
+    <h2>Implementation</h2>
+<pre><code>// Linear Search Implementation in JavaScript
+function linearSearch(arr, x) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === x) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+const data = [10, 50, 30, 70, 80, 20, 90, 40];
+const target = 20;
+console.log("Element found at index:", linearSearch(data, target));
+</code></pre>
+
+    <h2>Complexity Analysis</h2>
+    <ul>
+      <li><strong>Time Complexity:</strong> O(n) in the worst and average cases. O(1) in the best case (when the target is the first element).</li>
+      <li><strong>Auxiliary Space:</strong> O(1).</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="merge-sort.html" class="btn">&lt; Prev</a>
+      <a href="radix-sort.html" class="btn ">12</a>
+      <a href="merge-sort.html" class="btn ">13</a>
+      <a href="linear-search.html" class="btn active">14</a>
+      <a href="binary-search.html" class="btn ">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="binary-search.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Linked Lists in Memory - CodeCanvas</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  <!-- Top Navbar -->
+  
+
+  <button id="mobile-toggle" class="mobile-toggle">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2>DSA Tutorial</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-category">DSA Tutorial</div>
+      <ul>
+        <li><a href="index.html">DSA HOME</a></li>
+        <li><a href="dsa-intro.html">DSA Intro</a></li>
+        <li><a href="simple-algorithm.html">DSA Simple Algorithm</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Arrays</div>
+      <ul>
+        <li><a href="arrays.html">DSA Arrays</a></li>
+        <li><a href="array-operations.html">Array Operations</a></li>
+        <li><a href="multi-dimensional-arrays.html">Multi-dimensional Arrays</a></li>
+      </ul>
+
+      <div class="sidebar-category">Sorting Algorithms</div>
+      <ul>
+        <li><a href="bubble-sort.html">DSA Bubble Sort</a></li>
+        <li><a href="selection-sort.html">DSA Selection Sort</a></li>
+        <li><a href="insertion-sort.html">DSA Insertion Sort</a></li>
+        <li><a href="quick-sort.html">DSA Quick Sort</a></li>
+        <li><a href="counting-sort.html">DSA Counting Sort</a></li>
+        <li><a href="radix-sort.html">DSA Radix Sort</a></li>
+        <li><a href="merge-sort.html">DSA Merge Sort</a></li>
+      </ul>
+
+      <div class="sidebar-category">Searching Algorithms</div>
+      <ul>
+        <li><a href="linear-search.html">DSA Linear Search</a></li>
+        <li><a href="binary-search.html">DSA Binary Search</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Linked Lists</div>
+      <ul>
+        <li><a href="linked-lists.html">DSA Linked Lists</a></li>
+        <li><a href="linked-lists-memory.html">DSA Linked Lists in Memory</a></li>
+        <li><a href="linked-lists-types.html">DSA Linked Lists Types</a></li>
+        <li><a href="linked-lists-operations.html">Linked Lists Operations</a></li>
+      </ul>
+
+      <div class="sidebar-category">Stacks & Queues</div>
+      <ul>
+        <li><a href="stacks.html">DSA Stacks</a></li>
+        <li><a href="queues.html">DSA Queues</a></li>
+      </ul>
+
+      <div class="sidebar-category">Hash Tables</div>
+      <ul>
+        <li><a href="hash-tables.html">DSA Hash Tables</a></li>
+        <li><a href="hash-maps.html">DSA Hash Maps</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Trees</div>
+      <ul>
+        <li><a href="trees.html">DSA Trees</a></li>
+        <li><a href="binary-trees.html">DSA Binary Trees</a></li>
+        <li><a href="tree-pre-order.html">DSA Pre-order Traversal</a></li>
+        <li><a href="tree-in-order.html">DSA In-order Traversal</a></li>
+        <li><a href="tree-post-order.html">DSA Post-order Traversal</a></li>
+        <li><a href="tree-array-implementation.html">DSA Array Implementation</a></li>
+        <li><a href="binary-search-trees.html">DSA Binary Search Trees</a></li>
+        <li><a href="avl-trees.html">DSA AVL Trees</a></li>
+      </ul>
+      
+      <div class="sidebar-category">Graphs</div>
+      <ul>
+        <li><a href="graphs.html">DSA Graphs</a></li>
+        <li><a href="graphs-implementation.html">Graphs Implementation</a></li>
+        <li><a href="graphs-traversal.html">DSA Graphs Traversal</a></li>
+        <li><a href="graphs-cycle-detection.html">DSA Cycle Detection</a></li>
+      </ul>
+
+      <div class="sidebar-category">Shortest Path</div>
+      <ul>
+        <li><a href="shortest-path.html">DSA Shortest Path</a></li>
+        <li><a href="dijkstras.html">DSA Dijkstra's</a></li>
+        <li><a href="bellman-ford.html">DSA Bellman-Ford</a></li>
+      </ul>
+
+      <div class="sidebar-category">Minimum Spanning Tree</div>
+      <ul>
+        <li><a href="minimum-spanning-tree.html">Minimum Spanning Tree</a></li>
+        <li><a href="prims.html">DSA Prim's</a></li>
+        <li><a href="kruskals.html">DSA Kruskal's</a></li>
+      </ul>
+
+      <div class="sidebar-category">Maximum Flow</div>
+      <ul>
+        <li><a href="maximum-flow.html">DSA Maximum Flow</a></li>
+        <li><a href="ford-fulkerson.html">DSA Ford-Fulkerson</a></li>
+        <li><a href="edmonds-karp.html">DSA Edmonds-Karp</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="back-link">← Back to CodeCanvas</a>
+  </aside>
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="linked-lists.html" class="btn">&lt; Prev</a>
+      <a href="binary-search.html" class="btn ">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="linked-lists-memory.html" class="btn active">17</a>
+      <a href="linked-lists-types.html" class="btn ">18</a>
+      <a href="linked-lists-operations.html" class="btn ">19</a>
+      <a href="linked-lists-types.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>Linked Lists in Memory</h1>
+
+    <div class="highlight-box">
+      <p>Unlike Arrays, Linked List nodes are scattered throughout the computer's memory. They don't need contiguous memory blocks because each node holds a specific memory address (pointer) pointing to the exact location of the next node.</p>
+    </div>
+
+    <h2>Memory Layout</h2>
+    <p>When you declare an array, the operating system must find a single, unbroken block of memory large enough to hold the entire array. If you need to store 10,000 integers, you need space for 10,000 integers right next to each other.</p>
+    <p>A Linked List, however, allocates memory dynamically as nodes are created. Node 1 might be at memory address `0x00A1`, while Node 2 might be at `0x0F4B`. The linked list works perfectly fine because Node 1 contains the data AND the address `0x0F4B`.</p>
+
+    <div class="diagram">
+      <svg width="500" height="200" viewBox="0 0 500 200">
+        <!-- Memory Grid to simulate scattered nodes -->
+        <rect x="0" y="0" width="500" height="200" fill="#0a0a0a" stroke="var(--border-color)"/>
+        
+        <!-- Node 1 -->
+        <rect x="50" y="30" width="80" height="60" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="90" y="50" fill="#f0f0f0" text-anchor="middle">Data: 5</text>
+        <text x="90" y="75" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">Next: 0x4B</text>
+        <text x="90" y="20" fill="var(--text-muted)" text-anchor="middle" font-size="12">0x1A (Head)</text>
+
+        <!-- Node 2 -->
+        <rect x="300" y="100" width="80" height="60" fill="#151515" stroke="var(--accent-green-light)" stroke-width="2"/>
+        <text x="340" y="120" fill="#f0f0f0" text-anchor="middle">Data: 8</text>
+        <text x="340" y="145" fill="var(--accent-green-light)" text-anchor="middle" font-size="12">Next: null</text>
+        <text x="340" y="90" fill="var(--text-muted)" text-anchor="middle" font-size="12">0x4B</text>
+
+        <!-- Pointer Arrow -->
+        <path d="M 130 60 C 200 60, 250 130, 300 130" fill="none" stroke="var(--accent-green)" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+      </svg>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Figure: Scattered nodes pointing to each other using explicit memory addresses.</p>
+    </div>
+
+    <h2>Advantages in Memory Allocation</h2>
+    <ul>
+      <li><strong>No Wasted Space:</strong> You only use the memory you need. Arrays often allocate extra space "just in case" to avoid resizing.</li>
+      <li><strong>Easy Insertion/Deletion:</strong> You don't have to shift 1,000 elements in memory to insert a new node at the beginning; you just change one pointer.</li>
+    </ul>
+
+    <h2>Disadvantages</h2>
+    <ul>
+      <li><strong>Pointer Overhead:</strong> Every piece of data requires extra memory to store the pointer(s). In a 64-bit system, every pointer is 8 bytes.</li>
+      <li><strong>No Random Access:</strong> Because memory is scattered, the CPU cannot instantly calculate the address of the 5th element. It must traverse from the head, node by node.</li>
+      <li><strong>Cache Misses:</strong> Modern CPUs load contiguous chunks of memory into their ultra-fast cache. Since linked lists are scattered, traversing them often causes cache misses, making them slower than arrays for sequential reads.</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="linked-lists.html" class="btn">&lt; Prev</a>
+      <a href="binary-search.html" class="btn ">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="linked-lists-memory.html" class="btn active">17</a>
+      <a href="linked-lists-types.html" class="btn ">18</a>
+      <a href="linked-lists-operations.html" class="btn ">19</a>
+      <a href="linked-lists-types.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

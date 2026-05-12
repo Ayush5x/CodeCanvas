@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCanvas - DSA Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        
+        button:focus, a:focus {
+            outline: none !important;
+        }
+
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        #visualizers-dropdown {
+            display: none;
+            transform: translateX(-50%) translateY(8px) scale(0.98);
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        #visualizers-dropdown.show {
+            display: block;
+            transform: translateX(-50%) translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        /* Reusable Split-Text Gradient */
+        .text-gradient-split {
+            background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.6));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-black min-h-[200vh] transition-colors duration-500">
+
+    <header id="header-wrapper" class="fixed top-0 left-0 right-0 z-50 p-0 transition-all duration-500">
+        <nav id="navbar" class="mx-auto nav-blur transition-all duration-700 ease-in-out max-w-full bg-black border-transparent">
+            <div class="flex items-center justify-between px-6 py-3">
+                
+                <a href="/" class="flex items-center gap-4 group w-fit no-underline">
+                    <div class="text-white border-[1.5px] border-white w-10 h-10 flex items-center justify-center rounded-full rotate-[-10deg] group-hover:rotate-0 transition-transform duration-500">
+                        <span class="text-lg font-bold">Σ</span>
+                    </div>
+
+                    <div class="hidden sm:flex flex-col leading-[0.8]">
+                        <span class="text-white text-xl font-extrabold tracking-tighter uppercase">
+                            CODE
+                        </span>
+                        <span class="text-gradient-split tracking-[0.15em] font-light uppercase text-[10px] ml-0.5">
+                            Canvas
+                        </span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-1">
+                    <div class="relative" id="dropdown-trigger">
+                        <button class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors focus:outline-none">
+                            Visualizers
+                            <i data-lucide="chevron-down" id="chevron-icon" class="w-4 h-4 transition-transform duration-300"></i>
+                        </button>
+
+                        <div id="visualizers-dropdown" class="absolute left-1/2 -translate-x-1/2 mt-3 w-[600px] p-6 rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl">
+                            <div class="grid grid-cols-3 gap-6">
+                                <div class="space-y-3">
+                                    <h3 class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest px-2">Sorting</h3>
+                                    <a href="#" class="group flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                                        <i data-lucide="bar-chart-3" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
+                                        <span class="text-sm text-neutral-300 group-hover:text-white">Bubble Sort</span>
+                                    </a>
+                                    <a href="#" class="group flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                                        <i data-lucide="zap" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
+                                        <span class="text-sm text-neutral-300 group-hover:text-white">Quick Sort</span>
+                                    </a>
+                                </div>
+                                <div class="space-y-3">
+                                    <h3 class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest px-2">Graphs</h3>
+                                    <a href="#" class="group flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                                        <i data-lucide="network" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
+                                        <span class="text-sm text-neutral-300 group-hover:text-white">BFS Traversal</span>
+                                    </a>
+                                </div>
+                                <div class="space-y-3">
+                                    <h3 class="text-[10px] font-bold text-neutral-500 uppercase tracking-widest px-2">Pathfinding</h3>
+                                    <a href="#" class="group flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors">
+                                        <i data-lucide="route" class="w-4 h-4 text-neutral-500 group-hover:text-white"></i>
+                                        <span class="text-sm text-neutral-300 group-hover:text-white">Dijkstra</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors">Learn</a>
+                    <a href="#" class="px-4 py-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors">Docs</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="p-2 text-neutral-400 hover:text-white focus:outline-none">
+                        <i data-lucide="sun" id="sun-icon"></i>
+                        <i data-lucide="moon" id="moon-icon" class="hidden"></i>
+                    </button>
+                    <a href="#" class="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-neutral-200 transition-colors">
+                        Start Visualizing
+                    </a>
+                    <button id="mobile-toggle" class="lg:hidden p-2 text-neutral-400">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                        <i data-lucide="x" id="close-icon" class="hidden"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="lg:hidden border-t border-white/5 px-6 pb-6">
+                <a href="#" class="block text-lg text-neutral-400 py-4 hover:text-white">Learn</a>
+                <a href="#" class="block text-lg text-neutral-400 py-4 hover:text-white">Documentation</a>
+                <a href="#" class="block text-lg text-neutral-400 py-4 hover:text-white">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-48 px-10 text-neutral-500 max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-4">Floating Navbar Demo</h2>
+        <p>Scroll down to see the navbar transform into the pill-shaped floating design.</p>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        const headerWrapper = document.getElementById('header-wrapper');
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                headerWrapper.style.padding = "16px 16px 0";
+                navbar.classList.add('max-w-[900px]', 'rounded-full', 'border', 'border-white/10', 'bg-neutral-900/80', 'shadow-2xl');
+                navbar.classList.remove('max-w-full', 'bg-black', 'border-transparent');
+            } else {
+                headerWrapper.style.padding = "0";
+                navbar.classList.remove('max-w-[900px]', 'rounded-full', 'border', 'border-white/10', 'bg-neutral-900/80', 'shadow-2xl');
+                navbar.classList.add('max-w-full', 'bg-black', 'border-transparent');
+            }
+        });
+
+        const trigger = document.getElementById('dropdown-trigger');
+        const dropdown = document.getElementById('visualizers-dropdown');
+        const chevron = document.getElementById('chevron-icon');
+
+        trigger.addEventListener('mouseenter', () => {
+            dropdown.style.display = 'block';
+            setTimeout(() => {
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateX(-50%) translateY(0) scale(1)';
+            }, 10);
+            chevron.style.transform = 'rotate(180deg)';
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateX(-50%) translateY(8px) scale(0.98)';
+            chevron.style.transform = 'rotate(0deg)';
+            setTimeout(() => {
+                if(dropdown.style.opacity === '0') dropdown.style.display = 'none';
+            }, 300);
+        });
+
+        let isDark = true;
+        const themeBtn = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        themeBtn.addEventListener('click', () => {
+            isDark = !isDark;
+            document.documentElement.classList.toggle('dark');
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+            document.body.style.backgroundColor = isDark ? '#000' : '#fff';
+        });
+
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

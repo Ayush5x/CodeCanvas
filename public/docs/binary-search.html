@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Binary Search - CodeCanvas</title>
+  <meta name="description" content="Learn the Binary Search algorithm, how it works with examples, and its complexity analysis.">
+  <link rel="stylesheet" href="styles.css">
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        #visualizers-dropdown.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+
+    <script>
+        (function() {
+            try {
+                const mode = localStorage.getItem('focus-mode');
+                if (mode) {
+                    const root = document.documentElement;
+                    root.classList.add('no-transition');
+                    root.classList.add('focus-' + mode);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+  
+  <!-- Navbar injected by script.js -->
+  <!-- Sidebar injected by script.js -->
+
+
+  <main class="main-content">
+    <div class="pagination-top">
+      <a href="linear-search.html" class="btn">&lt; Prev</a>
+      <a href="merge-sort.html" class="btn ">13</a>
+      <a href="linear-search.html" class="btn ">14</a>
+      <a href="binary-search.html" class="btn active">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="linked-lists-memory.html" class="btn ">17</a>
+      <a href="linked-lists.html" class="btn">Next &gt;</a>
+    </div>
+
+    <h1>DSA Binary Search</h1>
+
+    <div class="highlight-box">
+      <p><strong>Binary Search</strong> is an efficient search algorithm that finds the position of a target value within a <strong>sorted array</strong>. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.</p>
+    </div>
+
+    <h2>How Binary Search Works</h2>
+    <p>Binary search works on the principle of <strong>Divide and Conquer</strong>. For this algorithm to work, the data collection should be in a sorted form.</p>
+    <ol>
+      <li>Find the middle element of the array.</li>
+      <li>If middle element is equal to the target value, return index.</li>
+      <li>If middle element is greater than target, search in the left half.</li>
+      <li>If middle element is less than target, search in the right half.</li>
+      <li>Repeat until the element is found or the search space is empty.</li>
+    </ol>
+
+    <h2>Implementation</h2>
+<pre><code>// Binary Search Implementation in JavaScript
+function binarySearch(arr, x) {
+    let low = 0;
+    let high = arr.length - 1;
+    let mid;
+
+    while (low <= high) {
+        mid = Math.floor((low + high) / 2);
+
+        if (arr[mid] === x) {
+            return mid;
+        } else if (arr[mid] < x) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+const data = [10, 20, 30, 40, 50, 70, 80, 90];
+const target = 70;
+console.log("Element found at index:", binarySearch(data, target));
+</code></pre>
+
+    <h2>Complexity Analysis</h2>
+    <ul>
+      <li><strong>Time Complexity:</strong> O(log n). With each comparison, the search space is halved.</li>
+      <li><strong>Auxiliary Space:</strong> O(1) for iterative implementation, O(log n) for recursive implementation (due to stack space).</li>
+    </ul>
+
+    <div class="pagination-top">
+      <a href="linear-search.html" class="btn">&lt; Prev</a>
+      <a href="merge-sort.html" class="btn ">13</a>
+      <a href="linear-search.html" class="btn ">14</a>
+      <a href="binary-search.html" class="btn active">15</a>
+      <a href="linked-lists.html" class="btn ">16</a>
+      <a href="linked-lists-memory.html" class="btn ">17</a>
+      <a href="linked-lists.html" class="btn">Next &gt;</a>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

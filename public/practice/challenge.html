@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Challenge - CodeCanvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="overflow: hidden;">
+    <nav class="navbar">
+        <a href="index.html" class="logo">Σ <span>CodeCanvas</span></a>
+        <div class="nav-links">
+            <a href="/">Visualizers</a>
+            <a href="index.html">Learn</a>
+            <a href="../docs/index.html">Documentation</a>
+            <span id="problem-title" style="color: var(--accent-green); font-weight: 600; margin-left: 2rem; border-left: 1px solid #333; padding-left: 2rem;"></span>
+        </div>
+    </nav>
+
+    <div class="challenge-container">
+        <div class="problem-side">
+            <div id="problem-content">
+                <h1 id="p-title"></h1>
+                <div style="display: flex; gap: 10px; margin: 1rem 0;">
+                    <span id="p-level" class="complexity"></span>
+                    <span id="p-complexity" class="complexity" style="color: var(--text-secondary);"></span>
+                </div>
+                <p id="p-description" style="font-size: 1.1rem; margin-bottom: 2rem;"></p>
+                
+                <h3>Example Test Cases:</h3>
+                <div id="p-examples" style="background: #111; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.9rem;"></div>
+            </div>
+        </div>
+        
+        <div class="editor-side">
+            <div class="editor-header">
+                <span style="font-size: 0.8rem; color: var(--text-secondary);">SOLUTION.JS</span>
+                <span style="font-size: 0.8rem; color: var(--accent-green);">v1.0.4</span>
+            </div>
+            <textarea id="code-editor" spellcheck="false"></textarea>
+            
+            <div id="results">
+                <div style="color: #444;">Run code to see results...</div>
+            </div>
+            
+            <div class="editor-footer">
+                <button class="btn btn-run" onclick="runCode()">Run Code</button>
+                <button class="btn btn-submit" onclick="submitCode()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const challengeId = urlParams.get('id');
+        const challenge = getChallenge(challengeId);
+
+        if (challenge) {
+            document.getElementById('problem-title').innerText = challenge.title;
+            document.getElementById('p-title').innerText = challenge.title;
+            document.getElementById('p-level').innerText = challenge.level;
+            document.getElementById('p-level').classList.add('level-' + challenge.level.toLowerCase());
+            document.getElementById('p-complexity').innerText = challenge.complexity;
+            document.getElementById('p-description').innerText = challenge.description;
+            document.getElementById('code-editor').value = challenge.template;
+            
+            let examplesHtml = "";
+            challenge.testCases.forEach((tc, i) => {
+                examplesHtml += `Input: ${JSON.stringify(tc.input[0])}\nExpected: ${JSON.stringify(tc.expected)}\n\n`;
+            });
+            document.getElementById('p-examples').innerText = examplesHtml;
+        }
+
+        function runCode() {
+            const code = document.getElementById('code-editor').value;
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = "<div style='color: #888;'>Testing...</div>";
+            
+            try {
+                // Create a function from the textarea string
+                const userFn = new Function('return ' + code)();
+                let output = "";
+                let allPassed = true;
+
+                challenge.testCases.forEach((tc, i) => {
+                    // Deep copy input for in-place modification tests
+                    const inputCopy = JSON.parse(JSON.stringify(tc.input));
+                    let res;
+                    
+                    if (challenge.id == 1) { // Special case for in-place array reverse
+                        userFn(...inputCopy);
+                        res = inputCopy[0];
+                    } else {
+                        res = userFn(...inputCopy);
+                    }
+
+                    const passed = JSON.stringify(res) === JSON.stringify(tc.expected);
+                    output += `<div class="${passed ? 'test-pass' : 'test-fail'}">
+                        Case ${i+1}: ${passed ? 'PASSED' : 'FAILED'} 
+                        (Got: ${JSON.stringify(res)}, Expected: ${JSON.stringify(tc.expected)})
+                    </div>`;
+                    if (!passed) allPassed = false;
+                });
+
+                resultsDiv.innerHTML = output;
+                return allPassed;
+            } catch (e) {
+                resultsDiv.innerHTML = `<div class="test-fail">Error: ${e.message}</div>`;
+                return false;
+            }
+        }
+
+        function submitCode() {
+            const passed = runCode();
+            if (passed) {
+                alert("Congratulations! All test cases passed. You are officially a DSA Master.");
+            } else {
+                alert("Some test cases failed. Keep trying!");
+            }
+        }
+
+        // Tab handling in textarea
+        document.getElementById('code-editor').addEventListener('keydown', function(e) {
+            if (e.key == 'Tab') {
+                e.preventDefault();
+                var start = this.selectionStart;
+                var end = this.selectionEnd;
+                this.value = this.value.substring(0, start) + "  " + this.value.substring(end);
+                this.selectionStart = this.selectionEnd = start + 2;
+            }
+        });
+    </script>
+</body>
+</html>

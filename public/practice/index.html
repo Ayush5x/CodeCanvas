@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Hub - CodeCanvas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../docs/index.html" class="logo">Σ <span>CodeCanvas</span></a>
+        <div class="nav-links">
+            <a href="/">Visualizers</a>
+            <a href="index.html" class="active">Learn</a>
+            <a href="../docs/index.html">Documentation</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Challenge Hub</h1>
+        <p>Master Data Structures and Algorithms with our curated set of interactive coding challenges. Verified in real-time.</p>
+    </header>
+
+    <div class="challenge-grid" id="challenge-grid">
+        <!-- Cards will be injected here by script.js -->
+    </div>
+
+    <script src="questions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('challenge-grid');
+            
+            challenges.forEach(c => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => window.location.href = `challenge.html?id=${c.id}`;
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="mem-addr">${c.mem}</span>
+                        <span class="complexity">${c.complexity}</span>
+                    </div>
+                    <div class="card-icon">${c.icon}</div>
+                    <h3 class="card-title">${c.title}</h3>
+                    <div class="card-footer">
+                        <span class="execute-link">Execute Module →</span>
+                        <div class="level-dot level-${c.level.toLowerCase()}"></div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+:root {
+  --bg-dark: #000000;
+  --card-bg: #0a0a0a;
+  --border-color: #222;
+  --accent-green: #468b75;
+  --text-primary: #ffffff;
+  --text-secondary: #888;
+  --easy: #00b894;
+  --medium: #fdcb6e;
+  --hard: #d63031;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', monospace;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span { color: var(--accent-green); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #fff;
+}
+
+/* Practice Hub Hero */
+.hero {
+  margin-top: 100px;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Challenge Grid */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 4rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(70, 139, 117, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mem-addr {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.75rem;
+  color: #444;
+}
+
+.complexity {
+  background: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.execute-link {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.card:hover .execute-link {
+  color: var(--accent-green);
+}
+
+.level-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.level-easy { background: var(--easy); box-shadow: 0 0 10px var(--easy); }
+.level-medium { background: var(--medium); box-shadow: 0 0 10px var(--medium); }
+.level-hard { background: var(--hard); box-shadow: 0 0 10px var(--hard); }
+
+/* Challenge Page Layout */
+.challenge-container {
+  display: flex;
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+}
+
+.problem-side {
+  flex: 1;
+  padding: 3rem;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+}
+
+.editor-side {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  background: #050505;
+}
+
+.editor-header {
+  padding: 1rem 2rem;
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#code-editor {
+  flex: 1;
+  background: transparent;
+  color: #d4d4d4;
+  border: none;
+  padding: 2rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.editor-footer {
+  padding: 1rem 2rem;
+  background: #111;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-run { background: #333; color: #fff; }
+.btn-submit { background: var(--accent-green); color: #000; }
+
+.btn:hover { opacity: 0.8; }
+
+#results {
+  padding: 1rem 2rem;
+  background: #000;
+  border-top: 1px solid var(--border-color);
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+}
+
+.test-pass { color: var(--easy); }
+.test-fail { color: var(--hard); }
+
+@media (max-width: 900px) {
+  .challenge-container { flex-direction: column; }
+  .navbar { padding: 1rem 2rem; }
+}
