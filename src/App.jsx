@@ -66,7 +66,6 @@ import SortingAlgorithmsQuestions from "./features/Activity/Quiz/SortingAlgorith
 import SearchAlgorithmsQuestions from "./features/Activity/Quiz/SearchQuestions";
 import RecursionQuestions from "./features/Activity/Quiz/RecursionQuestions";
 import GreedyAlgorithmsQuestions from "./features/Activity/Quiz/GreedyQuestions";
-import DS2Questions from "./features/Activity/Quiz/DS2Questions";
 
 export default function App() {
   const location = useLocation();
@@ -149,7 +148,6 @@ export default function App() {
           <Route path="/activity/quiz/search-algorithms" element={<SearchAlgorithmsQuestions />} />
           <Route path="/activity/quiz/recursion" element={<RecursionQuestions />} />
           <Route path="/activity/quiz/greedy-algorithms" element={<GreedyAlgorithmsQuestions />} />
-          <Route path="/activity/quiz/ds2" element={<DS2Questions />} />
 
         </Routes>
         </>
